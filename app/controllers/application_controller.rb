@@ -5,8 +5,23 @@ class ApplicationController < ActionController::API
   before_action :snake_case_params
   before_action :attach_authenticity_token
 
+  skip_before_action :verify_authenticity_token
+
+  rescue_from StandardError, with: :unhandled_error
+  rescue_from ActionController::InvalidAuthenticityToken, with: :invalid_authenticity_token
+
   def test
-    render json: { message: ["Hello from Rails"] }
+    if params.has_key?(:login)
+      login!(User.first)
+    elsif params.has_key?(:logout)
+      logout!
+    end
+  
+    if current_user
+      render json: { user: current_user.slice('id', 'username', 'session_token') }
+    else
+      render json: ['No current user']
+    end
   end
   
   def current_user 
@@ -31,6 +46,7 @@ class ApplicationController < ActionController::API
 
   def login(user)
     session[:session_token] = user.reset_session_token!
+    @current_user = user
   end
 
   def logout
@@ -49,4 +65,17 @@ class ApplicationController < ActionController::API
     headers['X-CSRF-Token'] = masked_authenticity_token(session)
       # headers['X-CSRF-Token'] = form_authenticity_token
   end
+
+  def unhandled_error(error)
+    if request.accepts.first.html?
+      raise error
+    else
+      @message = "#{error.class} - #{error.message}"
+      @stack = Rails::BacktraceCleaner.new.clean(error.backtrace)
+      render 'api/errors/internal_server_error', status: :internal_server_error
+      
+      logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
+    end
+  end
+  
 end
