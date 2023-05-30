@@ -66,6 +66,11 @@ class ApplicationController < ActionController::API
       # headers['X-CSRF-Token'] = form_authenticity_token
   end
 
+  def invalid_authenticity_token
+    render json: { message: 'Invalid authenticity token' }, 
+      status: :unprocessable_entity
+  end
+
   def unhandled_error(error)
     if request.accepts.first.html?
       raise error
