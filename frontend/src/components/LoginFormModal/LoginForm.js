@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
+import {Link} from "react-router-dom";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -28,11 +29,13 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>Login</h1>
+      <p>Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
       <label>
-        Username or Email
+        Email
         <input
           type="text"
           value={email}
@@ -40,6 +43,7 @@ function LoginForm() {
           required
         />
       </label>
+
       <label>
         Password
         <input
