@@ -11,6 +11,7 @@ function SignupFormPage() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [location, setLocation] = useState("");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
@@ -57,6 +58,15 @@ function SignupFormPage() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Location
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
             required
           />
         </label>
