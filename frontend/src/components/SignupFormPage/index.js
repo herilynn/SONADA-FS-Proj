@@ -20,7 +20,7 @@ function SignupFormPage() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, name, password }))
+      return dispatch(sessionActions.signup({ email, name, password, location }))
         .catch(async (res) => {
         let data;
         try {
