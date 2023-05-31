@@ -29,7 +29,7 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+      <h1>Log in</h1>
       <p>Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
@@ -53,7 +53,7 @@ function LoginForm() {
           required
         />
       </label>
-      <button type="submit">Log In</button>
+      <button type="submit" className = "login-button">Log In</button>
     </form>
   );
 }

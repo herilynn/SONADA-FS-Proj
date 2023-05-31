@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import SearchBar from '../Search/SearchBar';
 import './Navigation.css';
 
 function Navigation(){
@@ -17,6 +18,7 @@ function Navigation(){
   } else {
     sessionLinks = (
       <>
+        <SearchBar/>
         <LoginFormModal />
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
         <SignupFormModal />
@@ -26,6 +28,7 @@ function Navigation(){
 
   return (
     <ul>
+      {/* <li className='search-bar'></li> */}
       <li>
         <NavLink exact to="/">Home</NavLink>
         {sessionLinks}
