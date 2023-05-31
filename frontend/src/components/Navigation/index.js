@@ -29,10 +29,14 @@ function Navigation(){
   return (
     <ul>
       {/* <li className='search-bar'></li> */}
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+      <div className='div_outer'>
+        
+        <div className = "logo">
+          <NavLink exact to="/">Sonada</NavLink>
+        </div>
+        
         {sessionLinks}
-      </li>
+      </div>
     </ul>
   );
 }
