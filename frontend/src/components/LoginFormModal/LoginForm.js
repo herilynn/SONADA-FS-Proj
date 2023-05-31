@@ -17,9 +17,9 @@ function LoginForm() {
       .catch(async (res) => {
         let data;
         try {
-          data = await res.clone().json();
+          data = await JSON.parse(res.message);
         } catch {
-          data = await res.text();
+          data = await res.message;
         }
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);

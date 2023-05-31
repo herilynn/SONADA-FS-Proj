@@ -13,6 +13,7 @@
 #
 class User < ApplicationRecord
   validates :name, :email, :password_digest, :location, :session_token, presence: true
+   
   validates :session_token, :email, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, length: {minimum: 6}, allow_nil: true 

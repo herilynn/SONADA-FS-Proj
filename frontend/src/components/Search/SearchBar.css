@@ -1,11 +1,11 @@
-.search-bar {
+ .search-bar {
   display: flex;
   flex-direction: row;
   width: 370px;
   margin-left: 30px;
   border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  /* flex-grow: 1; */
+  border-bottom-left-radius: 8px;  
+   flex-grow: 1;
 }
 
 .search-button {
@@ -18,5 +18,5 @@
   align-items: center;
   justify-content: center;
   height: 24px;
-  box-sizing: content-box;
-}
+  box-sizing: content-box; 
+ }

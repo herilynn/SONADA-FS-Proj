@@ -18,7 +18,7 @@ function Navigation(){
   } else {
     sessionLinks = (
       <>
-        <SearchBar/>
+        {/* <SearchBar/> */}
         <LoginFormModal />
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
         <SignupFormModal />
@@ -27,17 +27,23 @@ function Navigation(){
   }
 
   return (
-    <ul>
+    <>
       {/* <li className='search-bar'></li> */}
       <div className='div_outer'>
         
         <div className = "logo">
           <NavLink exact to="/">Sonada</NavLink>
+          <SearchBar/>
         </div>
-        
-        {sessionLinks}
+
+        {/* <div className='search_div'> */}
+          
+        {/* </div> */}
+        <div className = 'session_div'>
+          {sessionLinks}
+        </div>
       </div>
-    </ul>
+    </>
   );
 }
 
