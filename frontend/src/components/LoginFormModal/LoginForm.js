@@ -31,7 +31,7 @@ function LoginForm() {
     <form onSubmit={handleSubmit}>
       <h1>Log in</h1>
       <p>Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
-      <ul>
+      <ul className="loginErrors">
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
       <label>

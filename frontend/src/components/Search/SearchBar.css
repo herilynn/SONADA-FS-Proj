@@ -3,16 +3,18 @@
   flex-direction: row;
   width: 370px;
   margin-left: 30px;
+  border-color: steelblue;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;  
    flex-grow: 1;
 }
 
 .search-button {
+  border-color: transparent;
   background-color: rgb(241, 83, 66);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  width: 36px;
+  width: 31px;
   padding: 7px;
   display: flex;
   align-items: center;
