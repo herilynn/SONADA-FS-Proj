@@ -19,6 +19,7 @@
   font-family: "Lucida Handwriting", cursive;
   font-size: 30px;
   padding-left: 20px;
+  /* position: absolute; */
   /* margin-top: 20px !important; */
 }
 
@@ -27,12 +28,39 @@
   flex-grow: 1;
   width: 100%;
   justify-content: space-between;
-  padding: 10px
+  padding: 10px;
+  /* position: absolute; */
 }
 
 .session_div {
   display: flex;
 }
 
+.testing {
+  display: flex;
+  padding-right: 20px;
+  /* background-color: aqua; */
+  flex-direction: column;
+}
 
+.logoutButton {
+  background-color: rgb(82, 228, 218);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  /* display: flex; */
+  position: flex;
+}
 
+.profile-dropdown {
+  position: absolute;
+  margin-top: 50px;
+}
+
+.email {
+  margin-left: -100px;
+}
+
+.logout {
+  margin-left: -20px;
+}
