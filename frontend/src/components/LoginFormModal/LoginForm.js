@@ -28,33 +28,42 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Log in</h1>
-      <p>Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
-      <ul className="loginErrors">
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <label>
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
+    <div className="modal-container">
+      <div className = "modal">
+        <form onSubmit={handleSubmit}>
+          <h1>Log in</h1>
+          <p>Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
+          <ul className="loginErrors">
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+          <label>
+            Email
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
 
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit" className = "login-button">Log In</button>
-    </form>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button type="submit" className = "login-button">Log In</button>
+
+          <div className="demo-user-container">
+            <label className="Demo-User"></label>
+            <button className="demo" type="submit" onClick={() => { setEmail("demo@gmail.com"); setPassword("password"); }}>John Demo</button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 

@@ -8,32 +8,6 @@
   background-color: rgb(241, 83, 66);
 }
 
-.modal-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(221, 43, 43, 0.675);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal {
-   border-radius: 6px;
-   background-color: white;
-   width: 230px;
-   position: absolute;
-   top: -250px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   /* overflow-y: auto; */
-   padding: 50px;
-   box-sizing: border-box;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -56,6 +30,9 @@
   padding: 10px
 }
 
+.session_div {
+  display: flex;
+}
 
 
 

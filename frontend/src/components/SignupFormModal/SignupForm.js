@@ -46,7 +46,7 @@ function SignupForm() {
           </ul>
           <label>
             Your name
-            <input
+            <input className = 'name'
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -55,7 +55,7 @@ function SignupForm() {
           </label>
           <label>
             Email address
-            <input
+            <input className="email"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -63,7 +63,7 @@ function SignupForm() {
             />
           </label>
           <label>
-            Password
+            Password 
             <input
               type="password"
               value={password}
@@ -73,7 +73,7 @@ function SignupForm() {
           </label>
           <label>
             Location
-            <input
+            <input className="location"
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
