@@ -55,6 +55,7 @@
 .profile-dropdown {
   position: absolute;
   margin-top: 50px;
+  z-index: 1;
 }
 
 .email {

@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 
+function firstInitial(user) {
+  return user.name.charAt(0).toUpperCase();
+}
+
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
@@ -33,6 +37,7 @@ function ProfileButton({ user }) {
     <div className="testing">
       <button onClick={openMenu} className="logoutButton">
         <i className="fa-solid fa-user-circle" />
+        {firstInitial(user)}
       </button>
       {showMenu && (
         <ul className="profile-dropdown">

@@ -1,46 +1,36 @@
 class Api::GroupsController < ApplicationController
+  before_action: :require_logged_in, only: [:create]
 
-  # def index
-  #   if (current_user)
-  #     @joined_groups = current_user.joined_groups.map(&:id)
-  #     @my_groups = current_user.groups.map(&:id)
-  #     @allGroups =  @groups.map(&:id) - @joined_groups - @groups
-  #   end
-  # else
-  #   @joined_groups = []
-  #   @groups = []
-  # end
+  def index 
+    @groups = Group.all
+    render :index
+  end
 
-  # def create
-  #   @group = Group.new(group_params)
-  #   if (@group.save)
-  #     @creator = current_user
-  #     @memberships = []
-  #     @count = 1
-  #     @events = []
-  #     render :show
-  #   else
-  #     render json {errors @group.errors.full_messages}
-  #   end
+  def show
+    @group = Group.find_by(params[:id])
+    render :show
+  end
 
-  # def destroy
-  #   @group = Group.find_by(id: params[:id])
-  #   if (@group.owner_id == current_user.id)
-  #     @group.destroy
-  #     render json: {message: "Group successfully removed"}, status: 200
-  #   else
-  #     render json: {errors: ["Only the group creator has permission to remove this group"]}, status: 400
-  #   end
-  # end
+  def create
+    group = Group.new(group_params)
+    @group.owner_id = current_user.id
 
-  # def show 
-  #   @group = Group.include
+    if (@group.save)
+      membership = Membership.new(user_id: current_user.id, group_id: @group.id)
+      .membership.save
+      render :show
+    end
+  end
 
-  # end
+  def destroy
+    @group = Group.find(params[:id])
+    @group.delete if @group.owner_id == current_user.id
+    render :index
+  end
 
   private 
 
-#   def group_params
-#     params.require(:group).permit(:name, :description, :location, :owner_id)
-#   end
+  def group_params
+    params.require(:group).permit(:name, :description, :location, :owner_id)
+  end
 end
