@@ -58,12 +58,12 @@
   z-index: 1;
 }
 
-.email {
+/* .email {
   margin-left: -60px;
-}
+} */
 
 .logout {
-  margin-left: -10px;
+  width: 100%;
 }
 
 .default1 {
@@ -77,4 +77,8 @@
   margin-top: 15%;
   margin-left: 20%;
 
+}
+
+.help_button {
+  width: 100%
 }

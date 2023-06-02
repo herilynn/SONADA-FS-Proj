@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import {Link} from "react-router-dom";
+
 
 function firstInitial(user) {
   return user.name.charAt(0).toUpperCase();
@@ -41,10 +43,13 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li className="name">{user.name}</li>
-          <li className="email">{user.email}</li>
+          <button type = 'submit' className="your_events">Your events</button>
+          <button type = 'submit' className="your_groups">Your groups</button>
+          <button type = 'submit' className="your_profile">View profile</button>
+          <button type = 'submit' className="settings_button">Settings</button>
+          <button type = 'submit' className="help_button">Help</button>
           <li>
-            <button onClick={logout} className="logout">Log Out</button>
+            <button onClick={logout} className="logout">Log out</button>
           </li>
         </ul>
   
