@@ -20,7 +20,7 @@ class Group < ApplicationRecord
   has_many :memberships,
   foreign_key: :member_id,
   class_name: :Membership,
-  dependendt: :destroy
+  dependent: :destroy
 
   has_many :members,
   through: :memberships,
