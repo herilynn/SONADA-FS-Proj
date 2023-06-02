@@ -43,6 +43,8 @@ function Navigation(){
           {sessionLinks}
         </div>
       </div>
+      <img src="https://secure.meetupstatic.com/next/images/blobs/green-blob.svg" className='default1'/>
+      <img src="https://secure.meetupstatic.com/next/images/shared/online_events.svg?w=640" className='default2'/>
     </>
   );
 }

@@ -22,6 +22,19 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :groups,
+  foreign_key: :owner_id,
+  class_name: :Group
+
+  has_many :memberships,
+  foreign_key: :member_id,
+  class_name: :Membership,
+  dependent: :destroy
+
+  has_many :joined_groups,
+  through: :memberships,
+  source: :group
+
   def ensure_session_token
     self.session_token ||= generate_unique_session_token
   end

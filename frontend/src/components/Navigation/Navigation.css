@@ -64,3 +64,16 @@
 .logout {
   margin-left: -10px;
 }
+
+.default1 {
+  position: absolute;
+  margin-left: 57%;
+}
+
+.default2 {
+  position: absolute;
+  height: 50%;
+  margin-top: 15%;
+  margin-left: 20%;
+
+}
