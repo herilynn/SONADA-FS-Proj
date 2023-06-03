@@ -1,5 +1,5 @@
 class Api::GroupsController < ApplicationController
-  before_action: :require_logged_in, only: [:create]
+  before_action :require_logged_in, only: [:create]
 
   def index 
     @groups = Group.all
@@ -7,7 +7,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find_by(params[:id])
+    @group = Group.find(params[:id])
     render :show
   end
 

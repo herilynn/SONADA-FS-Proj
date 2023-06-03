@@ -8,8 +8,13 @@ import App from "./App";
 import configureStore from "./store";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
+import { createGroup } from "./store/group";
 
 const store = configureStore();
+
+window.store = store
+// window.createUser = createUser
+window.createGroup = createGroup
 
 if (process.env.NODE_ENV !== "production") {
   window.store = store;
