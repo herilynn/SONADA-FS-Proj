@@ -13,6 +13,10 @@
 
 }
 
+.signup:hover {
+  background-color: teal;
+}
+
 .modal-container {
   position: absolute;
   top: 0;
@@ -28,12 +32,32 @@
 .modal {
    border-radius: 6px;
    background-color: white;
-   width: 230px;
-   position: absolute;
-   top: -250px;
+   width: 350px;
+   height: 750px;
+   position: flex;
+   /* top: -250px; */
    display: flex;
    flex-direction: column;
    align-items: center;
    padding: 50px;
    box-sizing: border-box;
+}
+
+.SU-label {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.SU-header {
+  /* position: center; */
+  margin-left: 15%;
+  /* align-items: center; */
+  /* flex-direction: row; */
+  width: 250px;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.SU-input {
+  display: block;
 }

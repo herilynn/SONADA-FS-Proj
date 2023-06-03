@@ -44,8 +44,10 @@ export const createGroup = (group) => async (dispatch) => {
     method: 'POST',
     body: JSON.stringify(group)
   })
-  const data = await res.json()
-  dispatch(receiveGroup(data))
+  if (res.ok) {
+    let data = await res.json()
+    dispatch(receiveGroup(data))
+  }
 }
 
 export const updateGroup = (group) => async (dispatch) => {

@@ -82,3 +82,33 @@
 .help_button {
   width: 100%
 }
+
+.help_button:hover {
+  color: teal;
+  background-color: aliceblue;
+}
+
+.your_events:hover {
+  color: teal;
+  background-color: aliceblue;
+}
+
+.your_groups:hover {
+  color: teal;
+  background-color: aliceblue;
+}
+
+.your_profile:hover {
+  color: teal;
+  background-color: aliceblue;
+}
+
+.settings_button:hover {
+  color: teal;
+  background-color: aliceblue;
+}
+
+.logout:hover {
+  color: teal;
+  background-color: aliceblue;
+}

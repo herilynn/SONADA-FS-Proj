@@ -11,6 +11,10 @@
 
 }
 
+.login:hover {
+  color: rgb(17, 96, 96);
+}
+
 .loginErrors {
   color: red;
 }

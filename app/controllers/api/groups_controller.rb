@@ -12,12 +12,12 @@ class Api::GroupsController < ApplicationController
   end
 
   def create
-    group = Group.new(group_params)
+    @group = Group.new(group_params)
     @group.owner_id = current_user.id
 
     if (@group.save)
       membership = Membership.new(user_id: current_user.id, group_id: @group.id)
-      .membership.save
+      membership.save
       render :show
     end
   end

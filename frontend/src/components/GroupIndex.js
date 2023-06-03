@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Group from './Group';
 import { getGroups, fetchGroups } from '../store/group';
+import { createGroup } from '../store/group';
+
 
 const GroupIndex = () => {
   const dispatch = useDispatch()
@@ -13,6 +15,12 @@ const GroupIndex = () => {
     return null;
   }
 
+function handleSubmit() {
+  const group = {name: "Potato", description: "potato", location: "Kansas"}
+  dispatch(createGroup(group))
+}
+
+
 console.log(groups)
   return (
     <>
@@ -21,7 +29,7 @@ console.log(groups)
     <h1>This is group page</h1>
     <h1>This is group page</h1>
     <h1>This is group page</h1>
-
+    <button onClick={handleSubmit}>Submit</button>
     <ul>
       {
         groups && groups.map((group) => 
