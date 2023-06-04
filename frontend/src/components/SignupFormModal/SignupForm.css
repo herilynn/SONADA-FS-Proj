@@ -46,6 +46,7 @@
 .SU-label {
   margin-bottom: 20px;
   display: block;
+  font-weight: bold;
 }
 
 .SU-header {
@@ -60,4 +61,23 @@
 
 .SU-input {
   display: block;
+  width: 200px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+.SU-button {
+  color: white;
+  background-color: #E32359;
+  width: 210px;
+  border-radius: 6px;
+  height: 50px
+}
+
+.SU-input:hover {
+  border-color: steelblue;
+}
+
+.SU-button:hover {
+  background-color: #d33763;
 }

@@ -31,14 +31,14 @@ function LoginForm() {
     <div className="modal-container">
       <div className = "modal">
         <form onSubmit={handleSubmit}>
-          <h1>Log in</h1>
-          <p>Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
+          <h1 className="LI-header">Log in</h1>
+          <p className="LI-ptag">Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
           <ul className="loginErrors">
             {errors.map(error => <li key={error}>{error}</li>)}
           </ul>
-          <label>
+          <label className="LI-label">
             Email
-            <input
+            <input className="LI-input"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -46,19 +46,19 @@ function LoginForm() {
             />
           </label>
 
-          <label>
+          <label className="LI-label">
             Password
-            <input
+            <input className="LI-input"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </label>
-          <button type="submit" className = "login-button">Log In</button>
+          <button type="submit" className = "LI-button">Log In</button>
 
           <div className="demo-user-container">
-            <label className="Demo-User"></label>
+            {/* <label className="Demo-User"></label> */}
             <button className="demo" type="submit" onClick={() => { setEmail("demo@gmail.com"); setPassword("password"); }}>John Demo</button>
           </div>
         </form>

@@ -18,3 +18,70 @@
 .loginErrors {
   color: red;
 }
+
+.LI-header {
+  /* position: center; */
+  margin-left: 30%;
+  /* align-items: center; */
+  /* flex-direction: row; */
+  width: 250px;
+  font-weight: bold;
+  font-size: xx-large;
+  padding: 10px;
+}
+
+.LI-label {
+  margin-bottom: 20px;
+  display: block;
+  font-weight: bold;
+}
+
+.LI-input {
+  display: block;
+  width: 200px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+.LI-ptag {
+  margin-bottom: 30px;
+  margin-left: 17%;
+}
+
+.LI-button {
+  color: white;
+  background-color: #E32359;
+  width: 210px;
+  border-radius: 6px;
+  height: 50px;
+  margin-left: 10%;
+}
+
+.LI-input {
+  display: block;
+  width: 250px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+.demo {
+  color: white;
+  background-color: #E32359;
+  width: 210px;
+  border-radius: 6px;
+  height: 50px;
+  margin-left: 10%;
+  margin-top: 10px;
+}
+
+.LI-input:hover {
+  border-color: steelblue;
+}
+
+.LI-button:hover {
+  background-color: #d33763;
+}
+
+.demo:hover {
+  background-color: #d33763;
+}
