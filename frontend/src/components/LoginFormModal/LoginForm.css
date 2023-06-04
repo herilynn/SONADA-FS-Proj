@@ -8,6 +8,7 @@
   width: 75px;
   margin-right: 5px;
   height: 42px;
+  font-weight: bold;
 
 }
 
@@ -55,6 +56,8 @@
   border-radius: 6px;
   height: 50px;
   margin-left: 10%;
+  font-weight: bold;
+  font-size: larger;
 }
 
 .LI-input {
@@ -72,6 +75,8 @@
   height: 50px;
   margin-left: 10%;
   margin-top: 10px;
+  font-weight: bold;
+  font-size: larger;
 }
 
 .LI-input:hover {

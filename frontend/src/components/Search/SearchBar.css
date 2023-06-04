@@ -24,3 +24,22 @@
   box-sizing: content-box; 
   /* position: absolute; */
  }
+
+.search-button:hover {
+  background-color: rgba(227, 2, 2, 0.654);
+  border-color: red;
+}
+
+ .linkedin-button {
+  position: absolute;
+  width: 5%;
+  height: 6%;
+  left: 80%;
+ }
+
+ .git-button {
+  position: absolute;
+  width: 4%;
+  height: 6%;
+  left: 85%;
+ }
