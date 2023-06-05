@@ -29,8 +29,8 @@ function handleSubmit() {
     <h1>This is group page</h1>
     <h1>This is group page</h1>
     <h1>This is group page</h1>
-    <h1>This is group page</h1>
-    <button onClick={handleSubmit}>Submit</button> */}
+    <h1>This is group page</h1> */}
+    <button onClick={handleSubmit}>Submit</button>
     <ul>
       {
         groups && groups.map((group) => 

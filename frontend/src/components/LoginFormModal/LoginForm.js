@@ -3,12 +3,18 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 import {Link} from "react-router-dom";
+import SignupForm from "../SignupFormModal";
 
 function LoginForm() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [showSignupModal, setShowSignupModal] = useState(false);
+
+  const handleSignupButton = () => {
+    setShowSignupModal(true);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,14 +31,20 @@ function LoginForm() {
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       });
+
+    // const makeSignupModal = () => {
+      
   };
 
   return (
     <div className="modal-container">
       <div className = "modal">
+        {showSignupModal ? (
+          <SignupForm/>
+        ) : (
         <form onSubmit={handleSubmit}>
           <h1 className="LI-header">Log in</h1>
-          <p className="LI-ptag">Not a member yet? <Link to = "/signup" className = "teal-link">Sign Up</Link></p>
+          <p className="LI-ptag">Not a member yet? <button className = "teal-link" onClick={handleSignupButton}>Sign Up</button></p>
           <ul className="loginErrors">
             {errors.map(error => <li key={error}>{error}</li>)}
           </ul>
@@ -62,7 +74,9 @@ function LoginForm() {
             <button className="demo" type="submit" onClick={() => { setEmail("demo@gmail.com"); setPassword("password"); }}>John Demo</button>
           </div>
         </form>
+        )}
       </div>
+      {showSignupModal && <SignupForm />}
     </div>
   );
 }
