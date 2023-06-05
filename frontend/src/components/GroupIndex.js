@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Group from './Group';
 import { getGroups, fetchGroups } from '../store/group';
 import { createGroup } from '../store/group';
+import { searchGroups } from '../store/group';
 
 
 const GroupIndex = () => {
@@ -21,19 +22,25 @@ function handleSubmit() {
 }
 
 
-console.log(groups)
+// console.log(groups)
   return (
     <>
+    {/* <h1>This is group page</h1>
     <h1>This is group page</h1>
     <h1>This is group page</h1>
     <h1>This is group page</h1>
     <h1>This is group page</h1>
-    <h1>This is group page</h1>
-    <button onClick={handleSubmit}>Submit</button>
+    <button onClick={handleSubmit}>Submit</button> */}
     <ul>
       {
         groups && groups.map((group) => 
-        <li>{`${group.id}`}</li>
+        <>
+          <li>{`${group.name}`}</li>
+          <br/>
+          <li>{`${group.description}`}</li>
+          <li>----------------------</li>
+          {/* <li>{}</li> */}
+        </>
         )
       }
       

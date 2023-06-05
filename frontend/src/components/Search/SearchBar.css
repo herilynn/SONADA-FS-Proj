@@ -33,13 +33,15 @@
  .linkedin-button {
   position: absolute;
   width: 5%;
-  height: 6%;
-  left: 80%;
+  height: 7%;
+  top: 92%;
+  left: 5%;
  }
 
  .git-button {
   position: absolute;
-  width: 4%;
-  height: 6%;
-  left: 85%;
+  width: 3%;
+  height: 5%;
+  top: 92.9%;
+  left: 2%;
  }

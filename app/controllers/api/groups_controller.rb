@@ -28,6 +28,11 @@ class Api::GroupsController < ApplicationController
     render :index
   end
 
+  def search
+    @groups = Group.where("name ILIKE ?", "%" + Group.sanitize_sql_like(params[:query]) + "%")
+    render :search
+end
+
   private 
 
   def group_params

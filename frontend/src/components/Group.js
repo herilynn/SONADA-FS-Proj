@@ -7,7 +7,7 @@ const Group = ({group}) => {
   return (
     <>
     <li>
-      <p> {group.title} </p>
+      {/* <p> {group.title} </p> */}
       {/* <Link to = {`groups/${group.id}/edit`}>Edit</Link> */}
     </li>
     </>

@@ -3,6 +3,8 @@ import csrfFetch from "./csrf"
 export const RECEIVE_GROUPS = 'groups/RECEIVE_GROUPS'
 export const RECEIVE_GROUP = 'groups/RECEIVE_GROUP'
 export const REMOVE_GROUP = 'groups/REMOVE_GROUP'
+export const SEARCH_GROUPS = 'groups/SEARCH_GROUPS'
+
 
 const receiveGroups = (groups) => ({
   type: RECEIVE_GROUPS,
@@ -19,12 +21,31 @@ const removeGroup = (groupId) => ({
   groupId
 })
 
+const addSearchGroups = (payload) => ({
+  type: SEARCH_GROUPS,
+  payload
+})
+
 export const getGroup = (groupId) => (state) => {
   return state?.groups ? state.groups[groupId] : null
 }
 
 export const getGroups = (state) => {
   return state?.groups ? Object.values(state.groups) : []
+}
+
+export const searchGroups = (query) => async (dispatch) => {
+  const res = await csrfFetch('/api/groups/search', {
+    method: 'POST',
+    headers: {
+      'Content-Type': "application/json",
+      'Accept': "application/json"
+    },
+    body: JSON.stringify(query)
+  });
+  const data = await res.json();
+  dispatch(addSearchGroups(data));
+  return {res, data}
 }
 
 export const fetchGroups = () => async (dispatch) => {
@@ -77,7 +98,9 @@ const groupsReducer = (oldState = {}, action) => {
     case REMOVE_GROUP:
       const newState = {...oldState}
       delete newState[action.groupId]
-      return newState
+      return newState;
+    case SEARCH_GROUPS:
+      return {...oldState, searchGroups: action.payload};
   }
 }
 
