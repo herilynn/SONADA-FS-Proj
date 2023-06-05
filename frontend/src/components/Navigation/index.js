@@ -6,6 +6,7 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import SearchBar from '../Search/SearchBar';
 import './Navigation.css';
+import AllGroups from '../GroupForm/CreateGroup';
 
 function Navigation(){
   const sessionUser = useSelector(state => state.session.user);
@@ -34,6 +35,7 @@ function Navigation(){
         <div className = "logo">
           <NavLink exact to="/">Sonada</NavLink>
           <SearchBar/>
+          <AllGroups/>
         </div>
 
         {/* <div className='search_div'> */}

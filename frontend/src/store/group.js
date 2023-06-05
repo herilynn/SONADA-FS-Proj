@@ -61,10 +61,16 @@ export const fetchGroup = (groupId) => async (dispatch) => {
 }
 
 export const createGroup = (group) => async (dispatch) => {
+  const {userId, title, description, location} = group; 
   const res = await csrfFetch('/api/groups', {
     method: 'POST',
-    body: JSON.stringify(group)
-  })
+    body: JSON.stringify({
+      owner_id: userId,
+      title,
+      description,
+      location,
+    }),
+  });
   if (res.ok) {
     let data = await res.json()
     dispatch(receiveGroup(data))

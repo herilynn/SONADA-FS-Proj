@@ -21,15 +21,20 @@ function handleSubmit() {
   dispatch(createGroup(group))
 }
 
+// const handleSubmit = async(e) => {
+//   e.preventDefault();
+//   await dispatch(fetchGroups());
+//   history.pushState("/groups")
+// }
 
 // console.log(groups)
   return (
     <>
-    {/* <h1>This is group page</h1>
     <h1>This is group page</h1>
     <h1>This is group page</h1>
     <h1>This is group page</h1>
-    <h1>This is group page</h1> */}
+    <h1>This is group page</h1>
+    <h1>This is group page</h1>
     <button onClick={handleSubmit}>Submit</button>
     <ul>
       {
