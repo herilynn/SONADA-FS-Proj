@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Group from './Group';
-import { getGroups, fetchGroups } from '../store/group';
-import { createGroup } from '../store/group';
-import { searchGroups } from '../store/group';
+import Group from '../Group';
+import { getGroups, fetchGroups } from '../../store/group';
+import { createGroup } from '../../store/group';
+import { searchGroups } from '../../store/group';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import "./GroupIndex.css";
+import GroupIndexItem from './GroupItemIndex';
 
 const GroupIndex = () => {
   const dispatch = useDispatch()
@@ -57,18 +59,11 @@ const handleSubmit2 = (group) => {
     <h1>This is group page</h1>
     <h1>This is group page</h1> */}
     {/* <input type = "text" value = {name} onChange = {(e) => setName(e.target.value)} /> */}
-    <button onClick={handleSubmit}>Submit</button>
-    <ul>
+    <button onClick={handleSubmit}>Add Group</button>
+    <ul className='gIndex'>
       {
         groups && groups.map((group) => 
-        <>
-          <Link to={`groups/${group.id}`}>{`${group.name}`}</Link>
-          <br/>
-          {/* <li>{`${group.id}`}</li> */}
-          <li>{`${group.description}`}</li>
-          <li>----------------------</li>
-          {/* <li>{}</li> */}
-        </>
+        <GroupIndexItem group = {group} key = {group.id}/>
         )
       }
       

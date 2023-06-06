@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 // import SignupFormModal from "./components/SignupFormModal";
 import Navigation from "./components/Navigation";
 import Hello from "./components/loggedOutScreen/loggedOutScreen";
-import GroupIndex from "./components/GroupIndex";
+import GroupIndex from "./components/GroupIndex/GroupIndex";
 
 function App() {
   return (

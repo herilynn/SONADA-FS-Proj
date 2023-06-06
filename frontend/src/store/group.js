@@ -69,7 +69,8 @@ export const createGroup = (group) => async (dispatch) => {
   // debugger
   if (res.ok) {
     let data = await res.json()
-    // dispatch(receiveGroup(data))
+    // debugger
+    dispatch(receiveGroup(data))
   }
 }
 
@@ -94,6 +95,7 @@ const groupsReducer = (oldState = {}, action) => {
     default:
       return oldState;
     case RECEIVE_GROUP:
+      // debugger
       return {...oldState, [action.group.id]: action.group};
     case RECEIVE_GROUPS:
       return {...oldState, ...action.groups};
