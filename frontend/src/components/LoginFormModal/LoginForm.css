@@ -68,7 +68,7 @@
 }
 
 .demo {
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: #E32359;
   width: 210px;
   border-radius: 6px;

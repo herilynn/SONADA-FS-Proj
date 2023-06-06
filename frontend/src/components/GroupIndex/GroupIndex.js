@@ -59,7 +59,7 @@ const handleSubmit2 = (group) => {
     <h1>This is group page</h1>
     <h1>This is group page</h1> */}
     {/* <input type = "text" value = {name} onChange = {(e) => setName(e.target.value)} /> */}
-    <button onClick={handleSubmit}>Add Group</button>
+    <button onClick={handleSubmit}>Start a new Group</button>
     <ul className='gIndex'>
       {
         groups && groups.map((group) => 

@@ -1,5 +1,4 @@
 .gIndex {
-  /* position: fixed; */
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -8,15 +7,25 @@
 
 .group {
   border: 1px solid;
-  /* flex: 100px; */
-  /* align-items: center; */
-  display: inline-block;
-  width: 500px;
-  /* height: 100px; */
+  align-items: center;
+  display: flex;
+  width: 300px;
+  height: 80px;
   justify-content: center;
+  border-radius: 6px;
+  border-color: rosybrown;
+  margin: 9px;
+  z-index: 1;
+  
 }
 
 .groupName {
-  font-size: 50px;
+  font-size: 30px;
   text-decoration: none;
+  /* margin-bottom: 30px; */
+  margin-left: 30px;
+}
+
+.imgPlaceholder {
+  width: 100px;
 }
