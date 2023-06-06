@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Membership < ApplicationRecord
-  validates :member_id, uniqueness: {scope :group_id, message: "Already a member"}
+  validates :member_id, uniqueness: {scope: :group_id, message: "Already a member"}
 
   belongs_to :member,
   foreign_key: :member_id,

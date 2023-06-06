@@ -16,8 +16,8 @@ const dispatch = useDispatch()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(fetchGroups())
-    history.push("/groups")
+    // await dispatch(fetchGroups())
+    history.replace("/groups")
   };
   return (
     <button onClick={handleSubmit}>All Groups</button>

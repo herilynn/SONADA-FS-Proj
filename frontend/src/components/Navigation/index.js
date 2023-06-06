@@ -6,7 +6,7 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import SearchBar from '../Search/SearchBar';
 import './Navigation.css';
-import AllGroups from '../GroupForm/CreateGroup';
+import AllGroups from '../Groups/AllGroups';
 
 function Navigation(){
   const sessionUser = useSelector(state => state.session.user);

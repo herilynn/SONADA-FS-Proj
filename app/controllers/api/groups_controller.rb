@@ -16,7 +16,7 @@ class Api::GroupsController < ApplicationController
     @group.owner_id = current_user.id
 
     if (@group.save)
-      membership = Membership.new(user_id: current_user.id, group_id: @group.id)
+      membership = Membership.new(member_id: current_user.id, group_id: @group.id)
       membership.save
       render :show
     end

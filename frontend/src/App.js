@@ -12,7 +12,12 @@ function App() {
       {/* <GroupIndex /> */}
         <Switch>
           <Route exact path = '/groups'>
+          
             <GroupIndex/>
+          </Route>
+
+          <Route exact path = '/groups/:groupId'>
+
           </Route>
           {/* <Route path="/signup">
             <SignupFormModal />
