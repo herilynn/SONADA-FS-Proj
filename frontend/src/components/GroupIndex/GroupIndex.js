@@ -21,7 +21,7 @@ const GroupIndex = () => {
 
 
   useEffect(() => {
-    console.log('rerendering')
+    // console.log('rerendering')
     dispatch(fetchGroups())
   }, [])
   if (groups === undefined || groups === null || groups.length === 0) {
