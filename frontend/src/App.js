@@ -4,6 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Hello from "./components/loggedOutScreen/loggedOutScreen";
 import GroupIndex from "./components/GroupIndex/GroupIndex";
+import GroupShow from "./components/GroupIndex/GroupsShowPage";
+
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
           </Route>
 
           <Route exact path = '/groups/:groupId'>
-
+            <GroupShow/>
           </Route>
           {/* <Route path="/signup">
             <SignupFormModal />

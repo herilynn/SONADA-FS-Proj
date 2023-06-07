@@ -40,9 +40,9 @@ function handleSubmit() {
   dispatch(createGroup(group))
 }
 
-const handleSubmit2 = (group) => {
-  history.replace(`/groups/${group.id}`) 
-};
+// const handleSubmit2 = (group) => {
+//   history.replace(`/groups/${group.id}`) 
+// };
 
 // const handleSubmit = async(e) => {
 //   e.preventDefault();

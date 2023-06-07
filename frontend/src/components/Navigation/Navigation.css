@@ -55,7 +55,7 @@
 .profile-dropdown {
   position: absolute;
   margin-top: 50px;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 /* .email {
@@ -69,13 +69,16 @@
 .default1 {
   position: absolute;
   margin-left: 57%;
+  z-index: 1;
 }
 
 .default2 {
   position: absolute;
+  display: flex;
   height: 50%;
   margin-top: 15%;
   margin-left: 20%;
+  z-index: 1;
 
 }
 
