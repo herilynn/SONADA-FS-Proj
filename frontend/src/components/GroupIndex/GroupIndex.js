@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import "./GroupIndex.css";
 import GroupIndexItem from './GroupItemIndex';
+import GroupFormModal from '../GroupForm';
 
 const GroupIndex = () => {
   const dispatch = useDispatch()
@@ -59,7 +60,8 @@ function handleSubmit() {
     <h1>This is group page</h1>
     <h1>This is group page</h1> */}
     {/* <input type = "text" value = {name} onChange = {(e) => setName(e.target.value)} /> */}
-    <button onClick={handleSubmit}>Start a new Group</button>
+    {/* <button onClick={handleSubmit}>Start a new Group</button> */}
+    <GroupFormModal />
     <ul className='gIndex'>
       {
         groups && groups.map((group) => 

@@ -79,7 +79,7 @@ export const createGroup = (group) => async (dispatch) => {
   // debugger
   const res = await csrfFetch('/api/groups', {
     method: 'POST',
-    body: JSON.stringify(group)
+    body: JSON.stringify({group: group})
   })
   // debugger
   if (res.ok) {
