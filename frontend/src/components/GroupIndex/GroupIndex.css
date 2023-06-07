@@ -34,10 +34,18 @@
   z-index: 3;
   width: 650px;
   margin-left: 100px;
+  margin-top: 150px;
   position: relative;
   /* justify-content: center; */
 }
 
 .groupDes {
   z-index: 3;
+}
+
+.Details {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 50px;
 }

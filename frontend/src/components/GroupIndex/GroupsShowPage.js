@@ -19,8 +19,9 @@ const GroupShow = () => {
     dispatch(fetchGroup(groupId))
   }, [groupId])
 
-  if (!groupId) {
-    history.replace('/');
+  if (!group) {
+    return <div>Loading...</div>;
+    // history.replace('/');
   }
   // const description = group[3]?.description;
   return (
@@ -28,7 +29,9 @@ const GroupShow = () => {
     <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
     {/* <div></div> */}
     <div className="groupDes">
-      {/* {`${group.description}`} */}
+      <div className="Details">Details</div>
+      {/* {group.description} */}
+      {`${group.description}`}
     </div>
     </div>
   )
