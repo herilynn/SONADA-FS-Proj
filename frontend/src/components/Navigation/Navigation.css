@@ -57,6 +57,7 @@
 .profile-dropdown {
   position: absolute;
   margin-top: 50px;
+  /* margin-right: 1px; */
   /* z-index: 1; */
 }
 

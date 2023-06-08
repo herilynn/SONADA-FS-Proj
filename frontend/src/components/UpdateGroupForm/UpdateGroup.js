@@ -13,9 +13,9 @@ function UpdateGroupForm() {
   const group = useSelector(getGroup(groupId))
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [location, setLocation] = useState("");
+  const [name, setName] = useState(group.name || "");
+  const [description, setDescription] = useState(group.description || "");
+  const [location, setLocation] = useState(group.location || "");
   const [errors, setErrors] = useState([]);
   const history = useHistory();
 
@@ -65,6 +65,7 @@ function UpdateGroupForm() {
             Set the location of your group
             <input className = 'SU-input'
               type="text"
+              // placeholder="empty"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               required
@@ -77,6 +78,7 @@ function UpdateGroupForm() {
             </label>
             <input className = 'SU-input'
               type="text"
+              // placeholder="empty"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -90,13 +92,14 @@ function UpdateGroupForm() {
             </label> 
             <input className = 'SU-input'
               type="text"
+              // placeholder="empty"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
             />
           </label>
           
-          <button className = "updateGroupButton" onClick={handleSubmit}>Update Group</button>
+          <button className = "updateGroupButton" onClick={handleSubmit}>Save Changes</button>
           <button className="deleteGroupButton" onClick={handleDelete}>Delete Group</button>
         </form>
         </div>

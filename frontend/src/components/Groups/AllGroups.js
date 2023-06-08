@@ -3,6 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { fetchGroups } from "../../store/group";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import "./AllGroups.css"
 
 // function CreateGroup() {
 //   const dispatch = useDispatch();

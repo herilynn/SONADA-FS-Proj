@@ -24,12 +24,15 @@ const GroupShow = () => {
   // const description = group[3]?.description;
   return (
     <div className="groupInfo">
+    <div className="Title">{`${group.name}`}</div>
     <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
     {/* <div></div> */}
     <div className="groupDes">
-      <div className="Details">Details</div>
+      <div className="Details">What we're about</div>
       {/* {group.description} */}
-      {`${group.description}`}
+        <div className="innerDes">
+          {`${group.description}`}
+        </div>
     </div>
     <UpdateGroupFormModal/>
     </div>
