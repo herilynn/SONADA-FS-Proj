@@ -24,7 +24,7 @@ const SearchBar = () => {
         await dispatch(searchGroups ({
           query: search
         }));
-        history.push("/searchresults");
+        history.replace("/searchresults");
         };
     
   return (

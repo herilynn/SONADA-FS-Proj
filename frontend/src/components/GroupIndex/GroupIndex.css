@@ -24,6 +24,9 @@
   text-decoration: none;
   /* margin-bottom: 30px; */
   margin-left: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .imgPlaceholder {
@@ -74,4 +77,31 @@
   padding-bottom: 30px;
   padding-top: 30px;
   margin-left: 90px;
+}
+
+.mapMarker {
+  width: 30px;
+  position: absolute;
+  margin-top: 230px;
+  margin-left: 60%;
+}
+
+.location {
+  position: absolute;
+  margin-top: 240px;
+  margin-left: 62.5%;
+}
+
+.memberMarker {
+  width: 30px;
+  position: absolute;
+  margin-top: 267px;
+  margin-left: 60%;
+}
+
+.creatorMarker {
+  width: 30px;
+  position: absolute;
+  margin-top: 303px;
+  margin-left: 60%;
 }
