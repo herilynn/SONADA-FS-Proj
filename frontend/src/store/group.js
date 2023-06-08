@@ -35,8 +35,8 @@ const addSearchGroups = (payload) => ({
 // }
 
 export const getGroup = (groupId) => (state) => {
-  console.log('hi')
-  console.log(state, groupId)
+  // console.log('hi')
+  // console.log(state, groupId)
   return state?.groups && state.groups[groupId] ? state.groups[groupId] : null;
 };
 // export const getGroup = (groupId) => (dispatch, getState) => {

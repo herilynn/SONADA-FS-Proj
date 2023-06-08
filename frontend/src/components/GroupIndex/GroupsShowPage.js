@@ -8,10 +8,8 @@ import UpdateGroupFormModal from "../UpdateGroupForm";
 const GroupShow = () => {
   const dispatch = useDispatch()
   const {groupId} = useParams()
-  console.log({groupId})
   const group = useSelector(getGroup(groupId))
-  console.log({group})
-  console.log('getGroup', getGroup(groupId))
+
   const [errors, setErrors] = useState([])
   const history = useHistory()
 

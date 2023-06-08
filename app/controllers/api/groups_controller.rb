@@ -18,10 +18,14 @@ class Api::GroupsController < ApplicationController
 
     # end
     @group = Group.find(params[:id])
-        if @group.update(group_params) && (@group.owner.id == current_user.id) 
+        if (@group.owner.id == current_user.id) 
+          if @group.update(group_params)
             render :show 
+          else
+              render json: {errors: @group.errors.full_messages}, status: 422 
+          end
         else
-            render json: @group.errors.full_messages, status: 422
+          render json: {errors: ["Not the creator/Group not found"]}
         end
     end
 

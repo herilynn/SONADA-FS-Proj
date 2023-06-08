@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 // import * as groupActions from "../../store/group";
-import { updateGroup } from "../../store/group";
+import { updateGroup, getGroup } from "../../store/group";
 import "./UpdateGroup.css";
 
 
 function UpdateGroupForm() {
+  const {groupId} = useParams()
+  const group = useSelector(getGroup(groupId))
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [name, setName] = useState("");
@@ -20,8 +23,8 @@ function UpdateGroupForm() {
     e.preventDefault();
     if (name.length > 6 && description.length > 0 && description.length < 250)  {
       setErrors([]);
-      const group = {location: location, name: name, description: description}
-      return dispatch(updateGroup(group))
+      const updatedGroup = {...group, location: location, name: name, description: description}
+      return dispatch(updateGroup(updatedGroup))
         .catch(async (res) => {
         let data;
         try {
