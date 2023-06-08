@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 // import * as groupActions from "../../store/group";
 import { createGroup } from "../../store/group";
 import './GroupForm.css';
+import '../Navigation/Navigation.css'
 
 function GroupForm() {
   const dispatch = useDispatch();

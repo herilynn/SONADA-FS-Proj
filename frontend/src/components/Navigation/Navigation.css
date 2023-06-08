@@ -1,7 +1,9 @@
 /* TODO Add site wide styles */
 .teal-link {
   color: rgb(43, 104, 145);
-  cursor: pointer;    
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;    
 }
 
 /* .login-button {
@@ -115,3 +117,19 @@
   color: teal;
   background-color: aliceblue;
 }
+
+.linkedin-button {
+  position: absolute;
+  width: 5%;
+  height: 7%;
+  /* top: 92%; */
+  left: 45%;
+ }
+
+ .git-button {
+  position: absolute;
+  width: 3%;
+  height: 5%;
+  top: 0.8%;
+  left: 50%;
+ }

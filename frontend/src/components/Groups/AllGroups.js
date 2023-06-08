@@ -20,7 +20,7 @@ const dispatch = useDispatch()
     history.replace("/groups")
   };
   return (
-    <button onClick={handleSubmit}>All Groups</button>
+    <button onClick={handleSubmit} className="All_Groups">All Groups</button>
     )
   };
 

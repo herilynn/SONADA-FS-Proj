@@ -29,19 +29,3 @@
   background-color: rgba(227, 2, 2, 0.654);
   border-color: red;
 }
-
- .linkedin-button {
-  position: absolute;
-  width: 5%;
-  height: 7%;
-  top: 92%;
-  left: 5%;
- }
-
- .git-button {
-  position: absolute;
-  width: 3%;
-  height: 5%;
-  top: 92.9%;
-  left: 2%;
- }
