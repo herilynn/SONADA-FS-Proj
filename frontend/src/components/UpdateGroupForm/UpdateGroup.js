@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 // import * as groupActions from "../../store/group";
-import { updateGroup, getGroup } from "../../store/group";
+import { updateGroup, getGroup, deleteGroup } from "../../store/group";
 import "./UpdateGroup.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 function UpdateGroupForm() {
@@ -16,6 +17,7 @@ function UpdateGroupForm() {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [errors, setErrors] = useState([]);
+  const history = useHistory();
 
   // if (sessionUser) return <Redirect to="/" />;
 
@@ -37,6 +39,15 @@ function UpdateGroupForm() {
         else setErrors([res.statusText]);
       });
     }
+  }
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(deleteGroup(groupId)).then(
+      async (res) => {
+          history.replace("/home");
+      }
+    )
   }
   //   return setErrors(['Confirm Password field must be the same as the Password field']);
   // };
@@ -86,6 +97,7 @@ function UpdateGroupForm() {
           </label>
           
           <button className = "updateGroupButton" onClick={handleSubmit}>Update Group</button>
+          <button className="deleteGroupButton" onClick={handleDelete}>Delete Group</button>
         </form>
         </div>
     </div>
