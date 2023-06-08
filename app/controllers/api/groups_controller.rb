@@ -11,6 +11,20 @@ class Api::GroupsController < ApplicationController
     render :show
   end
 
+  def update
+    # @group = Group.find(params[:id])
+    # @membership = @group.memberships
+    # if (@group.owner_id == current_user.id)
+
+    # end
+    @group = Group.find(params[:id])
+        if @group.update(group_params) && (@group.owner.id == current_user.id) 
+            render :show 
+        else
+            render json: @group.errors.full_messages, status: 422
+        end
+    end
+
   def create
     @group = Group.new(group_params)
     @group.owner_id = current_user.id

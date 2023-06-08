@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useSelector, useDispatch } from "react-redux";
 import { getGroup, fetchGroup } from "../../store/group";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import './GroupIndex.css';
+import UpdateGroupFormModal from "../UpdateGroupForm";
 
 const GroupShow = () => {
   const dispatch = useDispatch()
@@ -33,6 +33,7 @@ const GroupShow = () => {
       {/* {group.description} */}
       {`${group.description}`}
     </div>
+    <UpdateGroupFormModal/>
     </div>
   )
 }

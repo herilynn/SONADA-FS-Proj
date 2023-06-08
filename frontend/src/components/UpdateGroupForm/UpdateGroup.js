@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 // import * as groupActions from "../../store/group";
-import { createGroup } from "../../store/group";
-import './GroupForm.css';
+import { updateGroup } from "../../store/group";
+import "./UpdateGroup.css";
 
-function GroupForm() {
+
+function UpdateGroupForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ function GroupForm() {
     if (name.length > 6 && description.length > 0 && description.length < 250)  {
       setErrors([]);
       const group = {location: location, name: name, description: description}
-      return dispatch(createGroup(group))
+      return dispatch(updateGroup(group))
         .catch(async (res) => {
         let data;
         try {
@@ -40,7 +41,7 @@ function GroupForm() {
   return (
     <div className="modal-container">
       <div className = "modal">
-        <h1 className="Form-header">Start a Group</h1>
+        <h1 className="Form-header">Update Group</h1>
         <br></br>
         <form onSubmit={handleSubmit}>
           <ul className="signupErrors">
@@ -81,7 +82,7 @@ function GroupForm() {
             />
           </label>
           
-          <button className = "createGroupButton" onClick={handleSubmit}>Start a new Group</button>
+          <button className = "updateGroupButton" onClick={handleSubmit}>Update Group</button>
         </form>
         </div>
     </div>
@@ -89,4 +90,4 @@ function GroupForm() {
 
 }
 
-export default GroupForm;
+export default UpdateGroupForm;
