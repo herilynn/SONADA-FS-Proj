@@ -21,9 +21,9 @@ const removeGroup = (groupId) => ({
   groupId
 })
 
-const addSearchGroups = (payload) => ({
+const SearchGroups = (filtered) => ({
   type: SEARCH_GROUPS,
-  payload
+  filtered
 })
 
 // export const getGroup = (groupId) => (state) => {
@@ -59,9 +59,10 @@ export const searchGroups = (query) => async (dispatch) => {
     body: JSON.stringify(query)
   });
   const data = await res.json();
-  dispatch(addSearchGroups(data));
+  dispatch(SearchGroups(data));
   return {res, data}
 }
+
 
 export const fetchGroups = () => async (dispatch) => {
   const res = await fetch('/api/groups')
@@ -119,7 +120,7 @@ const groupsReducer = (oldState = {}, action) => {
       delete newState[action.groupId]
       return newState;
     case SEARCH_GROUPS:
-      return {...oldState, searchGroups: action.payload};
+      return {...oldState, searchGroups: action.filtered};
   }
 }
 

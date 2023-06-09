@@ -12,12 +12,16 @@ const Footer = () => {
       </div>
 
       <p className='line'>________________________________________________________________________________________________________________________________________________________________</p>
+      
+      {/* <ul className='DiscoverFooter'>Discover</ul> */}
 
       <ul className='accFooter'>
         Your Account
       </ul>
+      
         <div className='SU'> Sign Up </div>
         <div className='LI'>Log in</div>
+
     </footer>
   )
 }
