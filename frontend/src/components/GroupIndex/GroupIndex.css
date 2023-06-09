@@ -143,3 +143,19 @@
   width: 680px;
   display: flex;
 }
+
+.groupButtons {
+  margin-left: 100px;
+}
+
+.groupB {
+  border: none;
+  width: 110px;
+  background-color: white;
+  padding-top: 40px;
+  font-size: large;
+}
+
+.groupB:hover {
+  color: teal;
+}

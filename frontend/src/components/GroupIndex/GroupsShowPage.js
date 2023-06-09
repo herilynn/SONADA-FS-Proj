@@ -32,7 +32,14 @@ const GroupShow = () => {
     <div className="organizer">{`${group.email}`}</div>
     <div className="members">At least 1</div>
     <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
-    {/* <div></div> */}
+    <div className="groupButtons">
+      <button type="submit" className="groupB">About</button>
+      <button type="submit" className="groupB">Events</button>
+      <button type="submit" className="groupB">Members</button>
+      <button type="submit" className="groupB">Photos</button>
+      <button type="submit" className="groupB">Discussions</button>
+      <button type="submit" className="groupB">More</button>
+    </div>
     <div className="groupDes">
       <div className="Details">What we're about</div>
       {/* {group.description} */}
