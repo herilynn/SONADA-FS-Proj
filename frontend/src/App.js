@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Hello from "./components/loggedOutScreen/loggedOutScreen";
 import GroupIndex from "./components/GroupIndex/GroupIndex";
 import GroupShow from "./components/GroupIndex/GroupsShowPage";
+import Footer from "./components/Footer/footer";
 // import GroupForm from "./components/GroupForm/GroupForm";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <SignupFormModal />
           </Route> */}
         </Switch>
+        <Footer/>
     </>
   );
 }

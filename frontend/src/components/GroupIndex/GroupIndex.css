@@ -1,16 +1,31 @@
+.gIndex li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
 .gIndex {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  margin-top: 20%;
+}
+
+/* .gIndex {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  /* border: 1px solid; */
-}
+} */
 
 .group {
   border: 1px solid;
   align-items: center;
   display: flex;
   width: 300px;
-  height: 80px;
+  height: 140px;
   justify-content: center;
   border-radius: 6px;
   border-color: rosybrown;

@@ -1,1 +1,1 @@
-json.extract! @group, :id, :name, :description, :location, :created_at
+json.extract! @group, :id, :name, :description, :location, :created_at, :owner_id

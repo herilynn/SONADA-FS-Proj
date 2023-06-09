@@ -29,7 +29,7 @@ const GroupShow = () => {
     <div className="location">{`${group.location}`}</div>
     <img className="memberMarker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Noun_Project_people_icon_3376085.svg/1024px-Noun_Project_people_icon_3376085.svg.png"></img>
     <img className="creatorMarker" src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"></img>
-    <div className="organizer">{`${group.owner_id}`}</div>
+    <div className="organizer">{`${group.ownerId.name}`}</div>
     <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
     {/* <div></div> */}
     <div className="groupDes">

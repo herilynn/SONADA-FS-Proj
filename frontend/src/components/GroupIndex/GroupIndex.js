@@ -29,7 +29,7 @@ const GroupIndex = () => {
   if (groups === undefined || groups === null || groups.length === 0) {
     return null;
   }
-  
+
   // useEffect(() => {
   //   dispatch(fetchGroups(), [])
   //   if (groups !== undefined || groups !== null || groups.length !==0) {
@@ -63,6 +63,7 @@ function handleSubmit() {
     {/* <input type = "text" value = {name} onChange = {(e) => setName(e.target.value)} /> */}
     {/* <button onClick={handleSubmit}>Start a new Group</button> */}
     {/* <GroupFormModal /> */}
+
     <ul className='gIndex'>
       {
         groups && groups.map((group) => 
@@ -71,6 +72,7 @@ function handleSubmit() {
       }
       
     </ul>
+   
     </>
   )
 }
