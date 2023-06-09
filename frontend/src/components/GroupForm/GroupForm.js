@@ -18,7 +18,7 @@ function GroupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.length > 6 && description.length > 0 && description.length < 250)  {
+    if (name.length > 6 && description.length > 0 && description.length < 500)  {
       setErrors([]);
       const group = {location: location, name: name, description: description}
       return dispatch(createGroup(group))
@@ -52,31 +52,34 @@ function GroupForm() {
             <input className = 'SU-input'
               type="text"
               value={location}
+              style={{ width: '300px', height: '30px' }}
               onChange={(e) => setLocation(e.target.value)}
               required
             />
           </label>
           <label className="SU-label">
-            Name your group
+            {/* Name your group */}
             <label className="name-desc">
               Choose your name as carefully as if you're naming your 2nd born
             </label>
             <input className = 'SU-input'
               type="text"
               value={name}
+              style={{ width: '300px', height: '30px' }}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </label>
           <label className="SU-label">
-            Describe your group
+            {/* Describe your group */}
             <label>
               Give potential potatoes an idea of what they're getting into but not so 
               much they won't give it a shot (kind of like a dating profile)
             </label> 
-            <input className = 'SU-input'
-              type="text"
+            <textarea className = 'SU-input'
+              // type="text"
               value={description}
+              style={{ width: '300px', height: '150px' }}
               onChange={(e) => setDescription(e.target.value)}
               required
             />
@@ -84,6 +87,8 @@ function GroupForm() {
           
           <button className = "createGroupButton" onClick={handleSubmit}>Start a new Group</button>
         </form>
+        <img src="https://secure.meetupstatic.com/next/images/shared/online_events.svg?w=640" className='default3'/>
+
         </div>
     </div>
   );

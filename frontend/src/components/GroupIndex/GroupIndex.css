@@ -11,7 +11,8 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
-  margin-top: 20%;
+  margin-top: 25.5%;
+  background-color: slategrey;
 }
 
 /* .gIndex {
@@ -119,4 +120,26 @@
   position: absolute;
   margin-top: 303px;
   margin-left: 60%;
+}
+
+.organizer {
+  width: 30px;
+  position: absolute;
+  margin-top: 312px;
+  margin-left: 62.5%;
+}
+
+.members {
+  width: 100px;
+  position: absolute;
+  margin-top: 276px;
+  margin-left: 62.5%;
+}
+
+.default2 {
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 5.2%;
+  width: 680px;
+  display: flex;
 }

@@ -67,12 +67,13 @@ function UpdateGroupForm() {
               type="text"
               // placeholder="empty"
               value={location}
+              style={{ width: '300px', height: '30px' }}
               onChange={(e) => setLocation(e.target.value)}
               required
             />
           </label>
           <label className="SU-label">
-            Name your group
+            {/* Name your group */}
             <label className="name-desc">
               Choose your name as carefully as if you're naming your 2nd born
             </label>
@@ -80,20 +81,22 @@ function UpdateGroupForm() {
               type="text"
               // placeholder="empty"
               value={name}
+              style={{ width: '300px', height: '30px' }}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </label>
           <label className="SU-label">
-            Describe your group
+            {/* Describe your group */}
             <label>
               Give potential potatoes an idea of what they're getting into but not so 
               much they won't give it a shot (kind of like a dating profile)
             </label> 
-            <input className = 'SU-input'
+            <textarea className = 'SU-input'
               type="text"
               // placeholder="empty"
               value={description}
+              style={{ width: '300px', height: '150px' }}
               onChange={(e) => setDescription(e.target.value)}
               required
             />
@@ -102,6 +105,7 @@ function UpdateGroupForm() {
           <button className = "updateGroupButton" onClick={handleSubmit}>Save Changes</button>
           <button className="deleteGroupButton" onClick={handleDelete}>Delete Group</button>
         </form>
+        <img src="https://secure.meetupstatic.com/next/images/shared/online_events.svg?w=640" className='default4'/>
         </div>
     </div>
   );

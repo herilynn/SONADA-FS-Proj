@@ -21,6 +21,7 @@
   font-family: "Lucida Handwriting", cursive;
   font-size: 30px;
   padding-left: 20px;
+  z-index: 3;
   /* position: absolute; */
   /* margin-top: 20px !important; */
 }
@@ -75,7 +76,7 @@
   z-index: 1;
 }
 
-.default2 {
+/* .default2 {
   position: absolute;
   display: flex;
   height: 50%;
@@ -83,7 +84,7 @@
   margin-left: 20%;
   z-index: 1;
 
-}
+} */
 
 .help_button {
   width: 100%

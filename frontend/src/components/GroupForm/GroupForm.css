@@ -6,3 +6,26 @@
   font-size: 15px;
   margin-bottom: 1%;
 }
+
+.createGroupButton {
+  background-color: teal;
+  margin-left: 30%;
+  color: white;
+  border-radius: 8px;
+  height: 50px;
+}
+
+.createGroupButton:hover {
+  background-color: rgb(66, 197, 197);
+}
+
+h1 {
+  font-size: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* margin-top: 200px; */
+}
+
+.default3 {
+  height: 150px;
+  /* display: relative; */
+}

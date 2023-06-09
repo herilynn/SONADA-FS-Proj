@@ -64,7 +64,11 @@ function handleSubmit() {
     {/* <button onClick={handleSubmit}>Start a new Group</button> */}
     {/* <GroupFormModal /> */}
 
+    <img src="https://secure.meetupstatic.com/next/images/shared/online_events.svg?w=640" className='default2'/>
+
+
     <ul className='gIndex'>
+      
       {
         groups && groups.map((group) => 
         <GroupIndexItem group = {group} key = {group.id}/>
