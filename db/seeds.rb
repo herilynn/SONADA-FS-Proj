@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 ApplicationRecord.transaction do
-  User.destroy_all()
+  User.destroy_all
+  ApplicationRecord.connection.reset_pk_sequence!("users")
+
+  Group.destroy_all
+  ApplicationRecord.connection.reset_pk_sequence!("groups")
+
+  Membership.destroy_all
+  ApplicationRecord.connection.reset_pk_sequence!("memberships")
 
 User.create!(
   name: 'John Smith',
@@ -84,3 +91,5 @@ end
 #   location:
 #   owner_id:
 # )
+
+puts "done"
