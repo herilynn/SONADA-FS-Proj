@@ -24,7 +24,8 @@ class User < ApplicationRecord
 
   has_many :groups,
   foreign_key: :owner_id,
-  class_name: :Group
+  class_name: :Group,
+  dependent: :destroy
 
   has_many :memberships,
   foreign_key: :member_id,
