@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 ApplicationRecord.transaction do
+  User.destroy_all()
 
 User.create!(
   name: 'John Smith',
@@ -26,6 +27,27 @@ User.create!(
   email: "SpencerAI@gmail.com",
   password: 'password',
   location: 'Austin, TX'
+)
+
+User.create!(
+  name: "Ayce Lacap",
+  email: "AyceLacap@gmail.com",
+  password: "password",
+  location: "San Francisco, CA"
+)
+
+User.create!(
+  name: "Kyle Ginzburg",
+  email: "KyleGinzburg@gmail.com",
+  password: "password",
+  location: "Boston, Massachusetts"
+)
+
+User.create!(
+  name: "Kin Ka Tse",
+  email: "KinKTse@gmail.com",
+  password: "password",
+  location: "Toronto, Canada"
 )
 
 Group.create!(
@@ -50,6 +72,10 @@ Group.create!(
   location: 'South Pole, AQ',
   owner_id: 3
 )
+
+# Group.create!(
+#   name: ''
+# )
 # puts "done"
 end
 # Group.create! (
