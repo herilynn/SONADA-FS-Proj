@@ -37,13 +37,16 @@ class Api::GroupsController < ApplicationController
       membership = Membership.new(member_id: current_user.id, group_id: @group.id)
       membership.save
       render :show
+    else 
+      render json: {errors: @group.errors.full_messages}, status: 422  
     end
   end
 
   def destroy
     @group = Group.find(params[:id])
     @group.delete if @group.owner_id == current_user.id
-    render :index
+    # render :index
+    head :no_content
   end
 
   def search
