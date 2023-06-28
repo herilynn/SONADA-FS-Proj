@@ -3,7 +3,7 @@ import './SearchBar.css';
 import { IoMdSearch } from 'react-icons/io'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { searchGroups } from '../../store/group';
+import { searchGroups } from '../../store/search';
 
 const SearchBar = () => {
 

@@ -3,17 +3,7 @@ import csrfFetch from "./csrf";
 export const RECEIVE_GROUPS = "groups/RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "groups/RECEIVE_GROUP";
 export const REMOVE_GROUP = "groups/REMOVE_GROUP";
-export const SEARCH_GROUPS = "groups/SEARCH_GROUPS";
 
-export const getSearchedGroupData = (state) => { //
-  const groups = state.groups.filtered
-  if (groups) {
-    return Object.values(groups)
-  }
-  else {
-    return null
-  }
-};
 
 const receiveGroups = (groups) => ({
   type: RECEIVE_GROUPS,
@@ -30,10 +20,6 @@ const removeGroup = (groupId) => ({
   groupId,
 });
 
-export const filteredGroups = (filtered) => ({
-  type: SEARCH_GROUPS,
-  filtered,
-});
 
 // export const getGroup = (groupId) => (state) => {
 //   debugger
@@ -58,20 +44,6 @@ export const getGroups = (state) => {
   return state?.groups ? Object.values(state.groups) : [];
 };
 
-export const searchGroups = (query) => async (dispatch) => {
-  const res = await csrfFetch("/api/groups/search", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(query),
-  });
-  const data = await res.json();
-  // debugger;
-  dispatch(filteredGroups(data));
-  return { res, data };
-};
 
 export const fetchGroups = () => async (dispatch) => {
   const res = await fetch("/api/groups");
@@ -130,8 +102,6 @@ const groupsReducer = (oldState = {}, action) => {
       const newState = { ...oldState };
       delete newState[action.groupId];
       return newState;
-    case SEARCH_GROUPS:
-      return { ...oldState, filtered: action.filtered };
   }
 };
 
