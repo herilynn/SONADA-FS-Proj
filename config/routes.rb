@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       collection do
         post 'search'
       end
+      # get :search, on: :collection
     end
   end
   get '*path', to: "static_pages#frontend_index"

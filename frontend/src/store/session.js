@@ -1,4 +1,7 @@
 import csrfFetch from "./csrf.js";
+// import {SEARCH_GROUPS} from "./group.js";
+// import { SearchGroups } from "./group.js";
+
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
@@ -88,6 +91,7 @@ const sessionReducer = (state = initialState, action) => {
       return { ...state, user: action.payload };
     case REMOVE_CURRENT_USER:
       return { ...state, user: null };
+
     default:
       return state;
   }

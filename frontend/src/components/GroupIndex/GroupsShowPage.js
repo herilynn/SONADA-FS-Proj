@@ -11,7 +11,7 @@ const GroupShow = () => {
   const group = useSelector(getGroup(groupId))
 
   const [errors, setErrors] = useState([])
-  const history = useHistory()
+  // const history = useHistory()
 
   useEffect(() => {
     dispatch(fetchGroup(groupId))

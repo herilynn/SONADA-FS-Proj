@@ -6,7 +6,7 @@ import SignupForm from '../SignupFormModal/SignupForm';
 
 const Footer = () => {
   return (  
-    <footer class="footer">
+    <footer className="footer">
       <div className='groupFooter'>
         <GroupFormModal/>
       </div>

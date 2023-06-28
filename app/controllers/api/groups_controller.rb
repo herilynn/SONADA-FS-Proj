@@ -50,9 +50,11 @@ class Api::GroupsController < ApplicationController
   end
 
   def search
+    # query = params[:query].downcase
     @groups = Group.where("name ILIKE ?", "%" + Group.sanitize_sql_like(params[:query]) + "%")
+    # debugger
     render :search
-end
+  end
 
   private 
 

@@ -31,3 +31,9 @@
   background-color: rgba(227, 2, 2, 0.654);
   border-color: red;
 }
+
+.presentGroups {
+  box-sizing: border-box;
+  border: solid 1px black;
+  margin: 5px 0;
+}

@@ -1,30 +1,39 @@
-// this gonne be the reducer for group 
-import csrfFetch from "./csrf"
-export const RECEIVE_GROUPS = 'groups/RECEIVE_GROUPS'
-export const RECEIVE_GROUP = 'groups/RECEIVE_GROUP'
-export const REMOVE_GROUP = 'groups/REMOVE_GROUP'
-export const SEARCH_GROUPS = 'groups/SEARCH_GROUPS'
+// this gonne be the reducer for group
+import csrfFetch from "./csrf";
+export const RECEIVE_GROUPS = "groups/RECEIVE_GROUPS";
+export const RECEIVE_GROUP = "groups/RECEIVE_GROUP";
+export const REMOVE_GROUP = "groups/REMOVE_GROUP";
+export const SEARCH_GROUPS = "groups/SEARCH_GROUPS";
 
+export const getSearchedGroupData = (state) => { //
+  const groups = state.groups.filtered
+  if (groups) {
+    return Object.values(groups)
+  }
+  else {
+    return null
+  }
+};
 
 const receiveGroups = (groups) => ({
   type: RECEIVE_GROUPS,
-  groups
-})
+  groups,
+});
 
 const receiveGroup = (group) => ({
   type: RECEIVE_GROUP,
-  group
-})
+  group,
+});
 
 const removeGroup = (groupId) => ({
   type: REMOVE_GROUP,
-  groupId
-})
+  groupId,
+});
 
-const SearchGroups = (filtered) => ({
+export const filteredGroups = (filtered) => ({
   type: SEARCH_GROUPS,
-  filtered
-})
+  filtered,
+});
 
 // export const getGroup = (groupId) => (state) => {
 //   debugger
@@ -46,67 +55,67 @@ export const getGroup = (groupId) => (state) => {
 // };
 
 export const getGroups = (state) => {
-  return state?.groups ? Object.values(state.groups) : []
-}
+  return state?.groups ? Object.values(state.groups) : [];
+};
 
 export const searchGroups = (query) => async (dispatch) => {
-  const res = await csrfFetch('/api/groups/search', {
-    method: 'POST',
+  const res = await csrfFetch("/api/groups/search", {
+    method: "POST",
     headers: {
-      'Content-Type': "application/json",
-      'Accept': "application/json"
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    body: JSON.stringify(query)
+    body: JSON.stringify(query),
   });
   const data = await res.json();
-  dispatch(SearchGroups(data));
-  return {res, data}
-}
-
+  // debugger;
+  dispatch(filteredGroups(data));
+  return { res, data };
+};
 
 export const fetchGroups = () => async (dispatch) => {
-  const res = await fetch('/api/groups')
-  const data = await res.json()
-  dispatch(receiveGroups(data))
-}
+  const res = await fetch("/api/groups");
+  const data = await res.json();
+  dispatch(receiveGroups(data));
+};
 
 export const fetchGroup = (groupId) => async (dispatch) => {
-  const res = await fetch(`/api/groups/${groupId}`)
-  const data = await res.json()
-  dispatch(receiveGroup(data))
-}
+  const res = await fetch(`/api/groups/${groupId}`);
+  const data = await res.json();
+  dispatch(receiveGroup(data));
+};
 
 export const createGroup = (group) => async (dispatch) => {
   // debugger
-  const res = await csrfFetch('/api/groups', {
-    method: 'POST',
-    body: JSON.stringify({group: group})
-  })
+  const res = await csrfFetch("/api/groups", {
+    method: "POST",
+    body: JSON.stringify({ group: group }),
+  });
   // debugger
   if (res.ok) {
-    let data = await res.json()
+    let data = await res.json();
     // debugger
-    dispatch(receiveGroup(data))
+    dispatch(receiveGroup(data));
   }
-}
+};
 
 export const updateGroup = (group) => async (dispatch) => {
   const res = await csrfFetch(`/api/groups/${group.id}`, {
-    method: 'PATCH',
-    body: JSON.stringify(group)
-  })
-  const data = await res.json()
-  dispatch(receiveGroup(data))
-}
+    method: "PATCH",
+    body: JSON.stringify(group),
+  });
+  const data = await res.json();
+  dispatch(receiveGroup(data));
+};
 
 export const deleteGroup = (groupId) => async (dispatch) => {
   const res = await csrfFetch(`/api/groups/${groupId}`, {
-    method: 'DELETE'
-  })
+    method: "DELETE",
+  });
   if (res.ok) {
-    dispatch(removeGroup(groupId))
+    dispatch(removeGroup(groupId));
   }
-}
+};
 
 const groupsReducer = (oldState = {}, action) => {
   switch (action.type) {
@@ -114,16 +123,16 @@ const groupsReducer = (oldState = {}, action) => {
       return oldState;
     case RECEIVE_GROUP:
       // debugger
-      return {...oldState, [action.group.id]: action.group};
+      return { ...oldState, [action.group.id]: action.group };
     case RECEIVE_GROUPS:
-      return {...oldState, ...action.groups};
+      return { ...oldState, ...action.groups };
     case REMOVE_GROUP:
-      const newState = {...oldState}
-      delete newState[action.groupId]
+      const newState = { ...oldState };
+      delete newState[action.groupId];
       return newState;
     case SEARCH_GROUPS:
-      return {...oldState, searchGroups: action.filtered};
+      return { ...oldState, filtered: action.filtered };
   }
-}
+};
 
-export default groupsReducer
+export default groupsReducer;
