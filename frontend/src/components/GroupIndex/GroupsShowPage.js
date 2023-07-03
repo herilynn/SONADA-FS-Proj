@@ -4,14 +4,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { getGroup, fetchGroup } from "../../store/group";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import UpdateGroupFormModal from "../UpdateGroupForm";
+import { getUser, usersInGroup } from "../../store/members";
+import { setCurrentUser } from "../../store/session";
 
 const GroupShow = () => {
   const dispatch = useDispatch()
   const {groupId} = useParams()
   const group = useSelector(getGroup(groupId))
 
+  const sessionUser = useSelector(setCurrentUser)
+
   const [errors, setErrors] = useState([])
   // const history = useHistory()
+
+  const members = useSelector(usersInGroup(groupId))
+
+  const owner = useSelector(getUser(group ? group.ownerId : null))
+
+  const isOwner = (sessionUser && owner) && sessionUser.id === owner.id;
+
 
   useEffect(() => {
     dispatch(fetchGroup(groupId))

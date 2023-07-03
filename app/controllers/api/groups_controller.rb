@@ -31,10 +31,10 @@ class Api::GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @group.owner_id = current_user.id
+    @group.owner = current_user
     # debugger
     if (@group.save)
-      membership = Membership.new(member_id: current_user.id, group_id: @group.id)
+      membership = Membership.new(member_id: current_user, group_id: @group.id)
       membership.save
       render :show
     else 

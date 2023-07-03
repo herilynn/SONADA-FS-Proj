@@ -37,3 +37,7 @@
   border: solid 1px black;
   margin: 5px 0;
 }
+
+.search-results {
+  color: red;
+}

@@ -16,6 +16,8 @@ const SearchResults = () => {
 //   debugger;
 //   if (!searchedGroups) return null; 
 
+// console.log(searchedGroups)
+
   return (
     <div className="search-results">
       <div id="search-heading">
