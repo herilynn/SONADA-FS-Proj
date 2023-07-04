@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import UpdateGroupFormModal from "../UpdateGroupForm";
 import { getUser, usersInGroup } from "../../store/members";
 import { setCurrentUser } from "../../store/session";
+import Home from "../Map/map";
+import StreetMap from "../Map/map";
 
 const GroupShow = () => {
   const dispatch = useDispatch()
@@ -35,6 +37,9 @@ const GroupShow = () => {
   // const description = group[3]?.description;
   return (
     <div className="groupInfo">
+    <div className="google-map">
+      <StreetMap/>
+    </div>
     <div className="Title">{`${group.name}`}</div>
     <img className = "mapMarker" src="https://icons-for-free.com/iconfiles/png/512/map+marker+icon-1320166582858325800.png"></img>
     <div className="location">{`${group.location}`}</div>
@@ -51,6 +56,7 @@ const GroupShow = () => {
       <button type="submit" className="groupB">Discussions</button>
       <button type="submit" className="groupB">More</button>
     </div>
+
     <div className="groupDes">
       <div className="Details">What we're about</div>
       {/* {group.description} */}

@@ -159,3 +159,8 @@
 .groupB:hover {
   color: teal;
 }
+
+.google-map {
+  height: 100%;
+  width: 100%;
+}
