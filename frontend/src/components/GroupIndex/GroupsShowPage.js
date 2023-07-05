@@ -38,7 +38,7 @@ const GroupShow = () => {
   return (
     <div className="groupInfo">
     <div className="google-map">
-      <StreetMap/>
+      <Home center={{lat:group.latitude, lng:group.longitude}}/>
     </div>
     <div className="Title">{`${group.name}`}</div>
     <img className = "mapMarker" src="https://icons-for-free.com/iconfiles/png/512/map+marker+icon-1320166582858325800.png"></img>

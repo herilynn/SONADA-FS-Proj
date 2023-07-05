@@ -74,8 +74,8 @@ Group.create!(
   description: 'AI is a plaque; 1st they take our jobs. Tomorrow 
   your kids. Join up so we at least have a union when they take over.',
   location: "Boston, MA",
-  latitude: 42.3601,
-  longitude: 71.0589,
+  latitude: 42.3144,
+  longitude: -71.05268,
   owner_id: 5
 )
 
@@ -84,8 +84,8 @@ Group.create!(
   name: 'Catching Zs',
   description: 'Bed/floor/car/roof/anywhere you can imagine.',
   location: 'New York, NY',
-  latitude: 40.7128,
-  longitude: 74.0060,
+  latitude: 40.69763,
+  longitude: -74.14448,
   owner_id: 2
 )
 
@@ -93,8 +93,8 @@ Group.create!(
   name: 'AI Takeover',
   description: 'No more 404 error.',
   location: 'Austin, TX',
-  latitude: 30.2672,
-  longitude: 97.7431,
+  latitude: 30.30795,
+  longitude: -97.92055,
   owner_id: 3
 )
 
