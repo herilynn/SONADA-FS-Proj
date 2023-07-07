@@ -73,7 +73,7 @@
 .default1 {
   position: absolute;
   margin-left: 20%;
-  height: 99%;
+  height: 94%;
   /* display: flex; */
   /* flex-direction: column;
   align-items: center; */
@@ -115,18 +115,16 @@
 }
 
 .linkedin-button {
-  position: absolute;
-  width: 5%;
-  height: 7%;
-  top: 0.8%;
-  left: 45%;
+  position: flex;
+  width: 15%;
+  height: 15%;
+  margin-left: 180%;
  }
 
  .git-button {
-  position: absolute;
-  width: 3%;
-  height: 5%;
-  top: 1.5%;
-  left: 50%;
+  position: flex;
+  width: 15%;
+  height: 15%;
+  margin-left: 90%;
  }
 

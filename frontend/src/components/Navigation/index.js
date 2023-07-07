@@ -35,13 +35,6 @@ function Navigation(){
 
   return (
     <>
-    <a href="https://github.com/herilynn" target="_blank">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAZlBMVEX///8AAADc3Nzz8/P8/Pzg4OALCwtwcHCfn5+mpqbY2NjGxsbJycnBwcGbm5vj4+O1tbVPT0+VlZXt7e0ZGRk4ODgqKipJSUlEREQxMTF+fn4/Pz9fX1/R0dFXV1eLi4sgICBoaGiPtSMPAAAFKUlEQVRoge1a2aKqOgwFWyaVQVBUHND//8mLbiVpKewm9WzvA+tNJVm2zVw8b8aMGTNmzHhBShdZB+EOaXM+Hc5NvKCLXuJO9nRtUja52Pk9mgtFchWB5E7w2OXGxzgWlnqqpFYEN7wTKHwNu9jiD4j4qMsVLPqzruaxA6/fZLVMk6xsO5RZki6r9wqLeih15rAHQz0d9guRZtFu+MMuylKxPBiFcgZ9YtTEQsKgN+w9F4zdFwML4oPhe8vPsfv+kkyffpKeHvriXja8JJsJ1SO4Jsuw/xCT6dte9iQ8uSYa4vkiPXHqP7ZkeojaP0FzbXZpI/bPBIGCdkSmv8M2viKadSB4ubm89t/cnVffQTSvb8JzG6+D3ptksI7b8/ukm/fjTquHsz+A166jwz5KcmMKk3kS7Q8RJGYBx9WQ6cteNgzQ12Iygii/BmD5GZke+T2zYHHSgLyWlTBx0gjpUQ/R16xySdQu9MjNb5x87eVb0HCgCmMnP7KKNYHrHmLUlUiU4bVPRFgHbQUtktyy9l7dfVrUr0Ikueaxd0EKL78iCOKT5xRqBjWE00fJwt/w2T0P1QmEZgPX2Iz2DrBgKYJKh2v1byDrt999tGekznKIC+MUJdTYB7cGHQfPo23oXoDb0Ys0DRBAQtvDX8GOsX3+DeT7K0sR1FkHvz89DeREtn02GH5NiVVGVJB4bE0/6yW4gxEAGtDYVlxQ5p3c6aHXKC1Fsn9Db7v6L28+mN7R3fQghNmaHuTJrTM9qjlsM/c/8nvbYh9FPXqFrAENSWyjHirxeRNBBNhJ62IfRSp6b6ih6VXZR1Bwlr0r/R6c2FoGujNegwPIb70q+04RVaiOh4+cyL5iRuZ6daNHJbO9E1VoZOy0+zno2REiGCpQnWwf7J5UMuORpkPgw/0CZcAhUHe4Zxe7ErzO35JyJ+5w2duPtp5YMldI0rpM0VBiHcTUqcwGWOvHayf3asry/QPZ/fKTooBcN8SKuF+SFFSlKk0fqGuXiP6xNc9SDZJ5q92mcS4Sg62v4RwHv+qRQTYY/W9ZoWOtq+kQRmWxGHFhsSzKe2gQojWKq6wsnic9fp1zHcSwYvy+hTTQDZ56bs3D1ge3uADNF+/jT5JSdl+Xbx/5Ob2NalXSdzz62I02zEbB4t7ZWXAa1YusUIyyn2hWJ7G5P4vDbEwzUnwZe4Z6jZArlvvkryKzajR0MvlIh4gc64Tq7PungkVkciek23TXHkaciaDmP+efEw7KwYUyLgLlwEKOGa9K0fexT1WXTPUCJQmp9811zJ8G6r6OrAf/NY0AtYXWvZwZgWZqEDJRGhsUL+g3ZnXSQ30DA24TwC6GSQS1M46tQWf/V8zf32LWUwyQ52pXek8q69//8KOYYNhfKE7dRyLqNZQfFoGQcno+CukxdB6JqBcBjxXVxyNyPINjge1bz46nMJFsjTcTaG+cJzIPtOPsf0Hv3Zn0H9l8tUX7Ar1m/n9O74mx9RsIkOV/wPF+IJuv0nd51rgBf0bf/YFm+MLQH9J3JpCviqwtmy/Rv7D+Ln36f6b/bMYzYPVVeplY0jvWmmYscS0/Te9fHefgQ6ht3C/0fvhhfq2PMWhXZxHM17zGoPWwhmJSrc5cryE0qGu7GiZMWnZ2vvifoDdeTKjJ0fGdDw0BbrHNl0LKiMP6RQ1LoLWNvcOF7YM+xpyG6JuozWhQW/V3MJHrCy8DyOQ5+NikE5pF8pxC1M53n2bt+e/dm8jzDx/7jBkzZnwS/wEWiTcs0wjk3gAAAABJRU5ErkJggg==" className = "git-button"/>
-        </a>
-
-        <a href="https://www.linkedin.com/?original_referer=" target="_blank">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAb1BMVEX///8AZsgAS8EAU8MAXMUAX8YAVcPd5PTQ2/EAYscAV8SMq96duOMAZMfY4/Tj6fb09/w2dMyNqN5PhNHG1e50mdgpcculueQsbMqGpd0AUMI6eM6WseGCndnu8vp/odu7zOtrkta1xOdmjNSqweZ1SSBYAAACj0lEQVR4nO2a23bqIBBARSARKiYx95rUaPr/31ix5mp6Vp1gZJ3OfiMW2Q7h1mG1QhAEQRAEQRAEQZ5FlMZhIuj6t7xLlYRxGplq380zzrhQijyAUuJSKctdEwZ7wR5qfCDCxH62gBfABb4lAm+eQcTFHAGN4LNeCY/PCsEtEHxOHILZMdCIAG6wZyYMCGHgd9IVBrpBowR0bOaGgnAJQw5UyAwF4RKGDGYQcVMGhAAHZmqsHy49kYIUYpNRiEEK4f2kIBiDjRIRghSScWOcxcW2zCD9oxKQwnh15uF1ov04AhyUACnI4bd0sYQ4UJDC+/BLWLfYANbvNUhhPQzCqfukeDwMJhR4b6mp/qxCvyMA86YJhf7eh7zmdSS8DcMWMCiNKBB2cyjkZCNLKBBOj+dzwUELqCEFvUow4LHCmAKcRRSU0PwUIzMKkjYMi3pbobiT1GVZ1oEzffoxoiAjr0EvYLJqSqEiXB13H9dKvntUU7stIwrUHXzibJpSLeSpf2Tz6olR+2QFpxrVTOnCCuHmrur5bu54qoK/m6hbj9+H50Zhit14dC6vsDqJlyts6NIKflXkn/2R6QdqWYXCkYxLWvYexWJRhdNtLmKH7tmeL6nQ7WZp1T58W1Th0Ma8t8ddVqE7dqmD/xKFndMpJC9SkKiACqiACqjwb4UAFf5LBWpSQYIURqcR2m2QtQJtD1Feb7/QpQOHCkqBFEbJAPa2vfGpfzbLm2LeNaayonkaDmoDkwHjlIj+R9M3w2L/56r2b4aVgSkRCxJDFqTHLEgSWpAqtSFhbEHa3ILLAzZcobDhIokF12lsuFS0suBq1cqGC2aa6zU7JX99zW7tCKPX7BAEQRAEQRAEQZA7vgDOTDPZ0MRM9wAAAABJRU5ErkJggg==" className = "linkedin-button"/>
-        </a>
       {/* <li className='search-bar'></li> */}
       <div className='div_outer'>
         
@@ -49,6 +42,28 @@ function Navigation(){
           <NavLink exact to="/">Sonada</NavLink>
           <SearchBar/>
           <AllGroups/>
+    <a
+            href="https://www.linkedin.com/in/henry-lin-40b590177/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="linkedin-button"
+              viewBox="0 0 448 512"
+            >
+              <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+            </svg>
+          </a>
+          <a href="https://github.com/herilynn" target="_blank" rel="noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="git-button"
+              viewBox="0 0 448 512"
+            >
+              <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z" />
+            </svg>
+          </a>
         </div>
 
         {/* <div className='search_div'> */}
