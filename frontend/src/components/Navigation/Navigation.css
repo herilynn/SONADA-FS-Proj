@@ -71,21 +71,13 @@
 
 .default1 {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-}
-
-/* .default2 {
-  position: absolute;
-  display: flex;
-  height: 50%;
-  margin-top: 15%;
   margin-left: 20%;
-  z-index: 1;
-
-} */
+  height: 99%;
+  /* display: flex; */
+  /* flex-direction: column;
+  align-items: center; */
+  /* z-index: 1; */
+}
 
 .help_button {
   width: 100%

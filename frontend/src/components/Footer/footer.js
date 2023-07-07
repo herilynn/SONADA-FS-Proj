@@ -18,9 +18,9 @@ const Footer = () => {
       <ul className='accFooter'>
         Your Account
       </ul>
-      
+{/*       
         <div className='SU'> Sign Up </div>
-        <div className='LI'>Log in</div>
+        <div className='LI'>Log in</div> */}
 
     </footer>
   )

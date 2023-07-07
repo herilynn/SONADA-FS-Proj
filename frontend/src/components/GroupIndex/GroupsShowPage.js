@@ -39,6 +39,11 @@ const GroupShow = () => {
     <div className="groupInfo">
       <div className="groupInfoLeft">
         <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
+        {isOwner && (
+          <div className="updateButton">
+            <UpdateGroupFormModal />
+          </div>
+        )}
         <div className="groupDes">
           <div className="Details">What we're about</div>
           {/* {group.description} */}
@@ -46,16 +51,23 @@ const GroupShow = () => {
               {`${group.description}`}
             </div>
         </div>
-        <UpdateGroupFormModal/>
       </div>
       <div className="groupInfoRight">
-        <div className="Title">{`${group.name}`}</div>
-        <img className = "mapMarker" src="https://icons-for-free.com/iconfiles/png/512/map+marker+icon-1320166582858325800.png"></img>
-        <div className="location">{`${group.location}`}</div>
+        <div className="Title">
+          {`${group.name}`}
+      </div>
+        <div className="location">
+          <img className = "mapMarker" src="https://icons-for-free.com/iconfiles/png/512/map+marker+icon-1320166582858325800.png"></img>
+          {`${group.location}`}
+        </div>
+        <div className="organizer">
+        <img className="creatorMarker" src="https://www.pngimages.in/uploads/png-webp/2023/2023-January/Profile_Icon.webp"></img>
+          {`${group.email}`}
+        </div>
+        <div className="members">
         <img className="memberMarker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Noun_Project_people_icon_3376085.svg/1024px-Noun_Project_people_icon_3376085.svg.png"></img>
-        <img className="creatorMarker" src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"></img>
-        <div className="organizer">{`${group.email}`}</div>
-        <div className="members">At least 1</div>
+          At least 1
+        </div>
         <div className="google-map">
           <Home center={{lat:group.latitude, lng:group.longitude}}/>
         </div>
@@ -74,25 +86,3 @@ const GroupShow = () => {
 
 export default GroupShow
 
-// {
-//   "session": {
-//       "user": {
-//           "id": 1,
-//           "name": "John Smith",
-//           "email": "demo@gmail.com",
-//           "location": "New York, NY",
-//           "createdAt": "2023-06-06T18:27:09.598Z",
-//           "updatedAt": "2023-06-07T02:14:18.060Z"
-//       }
-//   },
-//   "groups": {
-//       "3": {
-//           "id": 3,
-//           "name": "AI Takeover",
-//           "description": "No more 404 error.",
-//           "location": "South Pole, AQ"
-//       }
-//   }
-// }
-
-// const description = groups[3]?.description;
