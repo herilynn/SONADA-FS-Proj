@@ -37,35 +37,38 @@ const GroupShow = () => {
   // const description = group[3]?.description;
   return (
     <div className="groupInfo">
-    <div className="google-map">
-      <Home center={{lat:group.latitude, lng:group.longitude}}/>
-    </div>
-    <div className="Title">{`${group.name}`}</div>
-    <img className = "mapMarker" src="https://icons-for-free.com/iconfiles/png/512/map+marker+icon-1320166582858325800.png"></img>
-    <div className="location">{`${group.location}`}</div>
-    <img className="memberMarker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Noun_Project_people_icon_3376085.svg/1024px-Noun_Project_people_icon_3376085.svg.png"></img>
-    <img className="creatorMarker" src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"></img>
-    <div className="organizer">{`${group.email}`}</div>
-    <div className="members">At least 1</div>
-    <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
-    <div className="groupButtons">
+      <div className="groupInfoLeft">
+        <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
+        <div className="groupDes">
+          <div className="Details">What we're about</div>
+          {/* {group.description} */}
+            <div className="innerDes">
+              {`${group.description}`}
+            </div>
+        </div>
+        <UpdateGroupFormModal/>
+      </div>
+      <div className="groupInfoRight">
+        <div className="Title">{`${group.name}`}</div>
+        <img className = "mapMarker" src="https://icons-for-free.com/iconfiles/png/512/map+marker+icon-1320166582858325800.png"></img>
+        <div className="location">{`${group.location}`}</div>
+        <img className="memberMarker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Noun_Project_people_icon_3376085.svg/1024px-Noun_Project_people_icon_3376085.svg.png"></img>
+        <img className="creatorMarker" src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"></img>
+        <div className="organizer">{`${group.email}`}</div>
+        <div className="members">At least 1</div>
+        <div className="google-map">
+          <Home center={{lat:group.latitude, lng:group.longitude}}/>
+        </div>
+      </div>
+    {/* <div className="groupButtons">
       <button type="submit" className="groupB">About</button>
       <button type="submit" className="groupB">Events</button>
       <button type="submit" className="groupB">Members</button>
       <button type="submit" className="groupB">Photos</button>
       <button type="submit" className="groupB">Discussions</button>
       <button type="submit" className="groupB">More</button>
-    </div>
-
-    <div className="groupDes">
-      <div className="Details">What we're about</div>
-      {/* {group.description} */}
-        <div className="innerDes">
-          {`${group.description}`}
-        </div>
-    </div>
-    <UpdateGroupFormModal/>
-    </div>
+    </div> */}
+  </div>
   )
 }
 

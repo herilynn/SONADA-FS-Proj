@@ -1,4 +1,13 @@
 .map-container{
     width: 70vh;
     height: 60vh;
+    border-radius: 20px;
+    /* position: fixed;
+    display: flex;
+    background-color: red;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 100px; */
 }

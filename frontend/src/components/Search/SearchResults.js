@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getSearchedGroupData } from "../../store/search";
+import Footer from "../Footer/footer";
 
 const SearchResults = () => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const SearchResults = () => {
                 (!searchedGroups || searchedGroups.length === 0) && <div> No group found </div>
             }
         </div>
+        {/* <Footer/> */}
     </div>
   );
 };
