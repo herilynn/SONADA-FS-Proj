@@ -1,15 +1,14 @@
 .login {
-  /* border: 0px; */
   background-color: transparent;
-  padding-right: 16px;
   border-radius: 6px;
   border-color: transparent;
   padding: 8px;
-  width: 75px;
+  width: 100%;
   margin-right: 5px;
   height: 42px;
   font-weight: bold;
   margin-top: 3px;
+  position: relative;
 
 }
 

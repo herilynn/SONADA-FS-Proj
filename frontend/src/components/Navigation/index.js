@@ -37,12 +37,11 @@ function Navigation(){
     <>
       {/* <li className='search-bar'></li> */}
       <div className='div_outer'>
-        
         <div className = "logo">
           <NavLink exact to="/">Sonada</NavLink>
           <SearchBar/>
           <AllGroups/>
-    <a
+          <a
             href="https://www.linkedin.com/in/henry-lin-40b590177/"
             target="_blank"
             rel="noreferrer"
@@ -65,10 +64,7 @@ function Navigation(){
             </svg>
           </a>
         </div>
-
-        {/* <div className='search_div'> */}
-          
-        {/* </div> */}
+        
         <div className = 'session_div'>
           {sessionLinks}
         </div>
