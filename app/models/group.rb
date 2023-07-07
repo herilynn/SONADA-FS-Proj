@@ -11,7 +11,7 @@
 #  updated_at  :datetime         not null
 #
 class Group < ApplicationRecord
-  validates  :name, :description, :location, :latitude, :longitude, presence: true
+  validates  :name, :description, :location, presence: true
 
   belongs_to :owner,
   foreign_key: :owner_id,

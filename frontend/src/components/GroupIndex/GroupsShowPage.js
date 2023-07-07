@@ -39,11 +39,9 @@ const GroupShow = () => {
     <div className="groupInfo">
       <div className="groupInfoLeft">
         <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
-        {isOwner && (
-          <div className="updateButton">
-            <UpdateGroupFormModal />
-          </div>
-        )}
+        <div className="updateButton">
+          <UpdateGroupFormModal/> 
+        </div>
         <div className="groupDes">
           <div className="Details">What we're about</div>
           {/* {group.description} */}

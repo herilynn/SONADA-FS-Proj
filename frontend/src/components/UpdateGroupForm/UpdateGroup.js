@@ -23,8 +23,8 @@ function UpdateGroupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrors([]);
     if (name.length > 6 && description.length > 0 && description.length < 250)  {
-      setErrors([]);
       const updatedGroup = {...group, location: location, name: name, description: description}
       return dispatch(updateGroup(updatedGroup))
         .catch(async (res) => {
@@ -39,6 +39,21 @@ function UpdateGroupForm() {
         else setErrors([res.statusText]);
       });
     }
+    else {
+
+      if (location.length < 2) {
+        setErrors(prev => ([...prev, "Location must be at least 2 characters"]))
+      }
+
+      if (name.length < 6) {
+        setErrors(prev => ([...prev, "Name must be at least 6 characters"]))
+      }
+      if (description.length === 0 || description.length > 500) {
+        setErrors(prev => ([...prev, "Description must be more than 0 characters and less than 500 characters"]))
+      }
+
+      
+      }
   }
 
   const handleDelete = (e) => {
