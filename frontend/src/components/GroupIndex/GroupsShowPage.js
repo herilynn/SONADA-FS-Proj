@@ -17,6 +17,7 @@ const GroupShow = () => {
   const selectCurrentUser = (state) => state.session.user;
 
   const sessionUser = useSelector(selectCurrentUser);
+  // const sessionUser = useSelector((state) => state.session.user);
 
   // const sessionUser = useSelector(setCurrentUser)
 
@@ -32,12 +33,14 @@ const GroupShow = () => {
 
   if (!group) {
     return <div>Loading...</div>;
-    // history.replace('/');
   }
-  const isOwner = group.ownerId === sessionUser.id;
-  console.log('group.ownerId:', group.ownerId);
-  console.log('sessionUser.id:', sessionUser.id);
-  console.log('isOwner:', isOwner);
+  // const isOwner = group.ownerId === sessionUser.id;
+  const isOwner = sessionUser && group.ownerId === sessionUser.id;
+
+
+  // console.log('group.ownerId:', group.ownerId);
+  // console.log('sessionUser.id:', sessionUser.id);
+  // console.log('isOwner:', isOwner);
   // const description = group[3]?.description;
   return (
     <div className="groupInfo">
