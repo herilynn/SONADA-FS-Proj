@@ -7,23 +7,23 @@ import UpdateGroupFormModal from "../UpdateGroupForm";
 import { getUser, usersInGroup } from "../../store/members";
 import { setCurrentUser } from "../../store/session";
 import Home from "../Map/map";
-import StreetMap from "../Map/map";
 
 const GroupShow = () => {
   const dispatch = useDispatch()
   const {groupId} = useParams()
   const group = useSelector(getGroup(groupId))
 
-  const sessionUser = useSelector(setCurrentUser)
+
+  const selectCurrentUser = (state) => state.session.user;
+
+  const sessionUser = useSelector(selectCurrentUser);
+
+  // const sessionUser = useSelector(setCurrentUser)
 
   const [errors, setErrors] = useState([])
   // const history = useHistory()
 
   const members = useSelector(usersInGroup(groupId))
-
-  const owner = useSelector(getUser(group ? group.ownerId : null))
-
-  const isOwner = (sessionUser && owner) && sessionUser.id === owner.id;
 
 
   useEffect(() => {
@@ -34,14 +34,20 @@ const GroupShow = () => {
     return <div>Loading...</div>;
     // history.replace('/');
   }
+  const isOwner = group.ownerId === sessionUser.id;
+  console.log('group.ownerId:', group.ownerId);
+  console.log('sessionUser.id:', sessionUser.id);
+  console.log('isOwner:', isOwner);
   // const description = group[3]?.description;
   return (
     <div className="groupInfo">
       <div className="groupInfoLeft">
         <img className="showImg" src="https://static.vecteezy.com/system/resources/previews/001/970/338/original/building-under-construction-site-free-vector.jpg"></img>
-        <div className="updateButton">
-          <UpdateGroupFormModal/> 
-        </div>
+        {isOwner && (
+          <div className="updateButton">
+            <UpdateGroupFormModal />
+          </div>
+        )}
         <div className="groupDes">
           <div className="Details">What we're about</div>
           {/* {group.description} */}
