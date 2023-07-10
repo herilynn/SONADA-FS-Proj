@@ -29,10 +29,12 @@ const SearchResults = () => {
           {searchedGroups && 
           searchedGroups.length > 0 &&
             searchedGroups.map((group) => (
+            <Link key={group.id} to={`/groups/${group.id}`}>
               <div key={group.id} className="presentGroups">
-                <h3>{group.name}</h3>
-                <p>{group.description}</p>
-              </div>
+                  <h3 className="groupName">{group.name}</h3>
+                  <p className="groupDescription">{group.description}</p>
+                </div>
+            </Link>
             ))}
             {
                 (!searchedGroups || searchedGroups.length === 0) && <div> No group found </div>

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getGroup, fetchGroup } from "../../store/group";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import UpdateGroupFormModal from "../UpdateGroupForm";
-import { getUser, usersInGroup } from "../../store/members";
+// import { getUser, usersInGroup } from "../../store/members";
 import { setCurrentUser } from "../../store/session";
 import Home from "../Map/map";
 
@@ -24,7 +24,7 @@ const GroupShow = () => {
   const [errors, setErrors] = useState([])
   // const history = useHistory()
 
-  const members = useSelector(usersInGroup(groupId))
+  // const members = useSelector(usersInGroup(groupId))
 
 
   useEffect(() => {

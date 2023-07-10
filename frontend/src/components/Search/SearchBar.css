@@ -32,10 +32,25 @@
   border-color: red;
 }
 
+#group-results {
+  /* height: 100%; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .presentGroups {
   box-sizing: border-box;
   border: solid 1px black;
-  margin: 5px 0;
+  margin: 5px;
+  flex: 0 0 calc(33.33% - 10px); 
+  height: 200px;
+  width: 450px;
+  overflow: hidden;
+}
+
+.groupDescription {
+  padding: 5%;
 }
 
 .search-results {
