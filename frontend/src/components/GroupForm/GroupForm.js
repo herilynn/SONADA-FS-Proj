@@ -62,6 +62,18 @@ function GroupForm() {
           "Description must be more than 0 characters and less than 500 characters",
         ]);
       }
+      if (latitude < -90 || latitude > 90) {
+        setErrors((prev) => [
+          ...prev,
+          "Not a valid latitude coordinate",
+        ]);
+      }  
+      if (longitude < -180 || longitude > 180) {
+          setErrors((prev) => [
+            ...prev,
+            "Not a valid longitude coordinate",
+        ]);
+      }
     }
   };
   //   return setErrors(['Confirm Password field must be the same as the Password field']);

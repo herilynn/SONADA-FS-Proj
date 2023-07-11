@@ -37,6 +37,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .presentGroups {
@@ -47,6 +48,12 @@
   height: 200px;
   width: 450px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.groupName {
+
 }
 
 .groupDescription {
