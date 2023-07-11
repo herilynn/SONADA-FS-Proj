@@ -12,7 +12,7 @@ const GroupShow = () => {
   const dispatch = useDispatch()
   const {groupId} = useParams()
   const group = useSelector(getGroup(groupId))
-
+  const [isMember, setIsMember] = useState(false);
 
   const selectCurrentUser = (state) => state.session.user;
 
@@ -26,10 +26,19 @@ const GroupShow = () => {
 
   // const members = useSelector(usersInGroup(groupId))
 
+  useEffect(() => {
+    const storedIsMember = localStorage.getItem("isMember");
+    setIsMember(storedIsMember === "true"); 
+    dispatch(fetchGroup(groupId));
+  }, [dispatch, groupId]);
 
   useEffect(() => {
-    dispatch(fetchGroup(groupId))
-  }, [groupId])
+    localStorage.setItem("isMember", isMember);
+  }, [isMember]);
+
+  // useEffect(() => {
+  //   dispatch(fetchGroup(groupId))
+  // }, [groupId])
 
   if (!group) {
     return <div>Loading...</div>;
@@ -37,6 +46,11 @@ const GroupShow = () => {
   // const isOwner = group.ownerId === sessionUser.id;
   const isOwner = sessionUser && group.ownerId === sessionUser.id;
 
+  const toggleMembership = () => {
+    setIsMember((prevState) => !prevState);
+  };
+
+  const joinLeaveButtonText = isMember ? "Leave" : "Join";
 
   // console.log('group.ownerId:', group.ownerId);
   // console.log('sessionUser.id:', sessionUser.id);
@@ -50,6 +64,12 @@ const GroupShow = () => {
           <div className="updateButton">
             <UpdateGroupFormModal />
           </div>
+        )}
+
+        {sessionUser && !isOwner && (
+          <button className="membershipButton" onClick={toggleMembership}>
+            {joinLeaveButtonText}
+          </button>
         )}
         <div className="groupDes">
           <div className="Details">What we're about</div>
