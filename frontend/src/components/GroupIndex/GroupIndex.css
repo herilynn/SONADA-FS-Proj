@@ -133,6 +133,7 @@
   /* width: 100%; */
   margin-left: 40%;
   font-size: large;
+  padding: 1%;
 
 }
 
@@ -153,6 +154,7 @@
   position: relative;
   margin-left: 40%;
   font-size: large;
+  padding: 1%;
 }
 
 .members {
@@ -160,6 +162,7 @@
   position: relative;
   margin-left: 40%;
   font-size: large;
+  /* padding: 1%; */
 }
 
 .default2 {
@@ -189,4 +192,18 @@
   height: 100%;
   width: 100%;
   padding: 1%;
+}
+
+.membershipButton {
+  width: 20%;
+  padding: 1%;
+  border-radius: 10px;
+  position: relative;
+  background-color: #e32359;
+  color: white;
+align-self: flex-start;
+}
+
+.membershipButton:hover {
+  background-color: #e74d79;
 }

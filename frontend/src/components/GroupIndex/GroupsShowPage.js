@@ -50,7 +50,7 @@ const GroupShow = () => {
     setIsMember((prevState) => !prevState);
   };
 
-  const joinLeaveButtonText = isMember ? "Leave" : "Join";
+  // const joinLeaveButtonText = isMember ? "Leave" : "Join";
 
   // console.log('group.ownerId:', group.ownerId);
   // console.log('sessionUser.id:', sessionUser.id);
@@ -66,11 +66,6 @@ const GroupShow = () => {
           </div>
         )}
 
-        {sessionUser && !isOwner && (
-          <button className="membershipButton" onClick={toggleMembership}>
-            {joinLeaveButtonText}
-          </button>
-        )}
         <div className="groupDes">
           <div className="Details">What we're about</div>
           {/* {group.description} */}
@@ -95,6 +90,11 @@ const GroupShow = () => {
         <img className="memberMarker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Noun_Project_people_icon_3376085.svg/1024px-Noun_Project_people_icon_3376085.svg.png"></img>
           At least 1
         </div>
+        {sessionUser && !isOwner && (
+          <button className="membershipButton" onClick={toggleMembership}>
+            {isMember ? "Leave this group" : "Join this group"}
+          </button>
+        )}
         <div className="google-map">
           <Home center={{lat:group.latitude, lng:group.longitude}}/>
         </div>
