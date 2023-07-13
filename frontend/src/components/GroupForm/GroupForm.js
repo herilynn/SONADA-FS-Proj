@@ -15,6 +15,7 @@ function GroupForm() {
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
   const [errors, setErrors] = useState([]);
+  const [redirectToGroup, setRedirectToGroup] = useState(false);
 
   // if (sessionUser) return <Redirect to="/" />;
 
@@ -44,6 +45,9 @@ function GroupForm() {
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
+      })
+      .then(() => {
+        setRedirectToGroup(true);
       });
     } else {
       if (location.length < 2) {
@@ -76,6 +80,10 @@ function GroupForm() {
       }
     }
   };
+  
+  if (redirectToGroup) {
+    return <Redirect to="/groups"/>;
+  }
   //   return setErrors(['Confirm Password field must be the same as the Password field']);
   // };
 

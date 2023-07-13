@@ -20,6 +20,7 @@ function SignupForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
+      // if (name.length > 2 && password.length > 5 && location.length > 2 && email.includes("@"))
       return dispatch(sessionActions.signup({ email, name, password, location }))
         .catch(async (res) => {
         let data;

@@ -1,12 +1,14 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import session from './session';
+import sessionReducer from './session';
 import groupsReducer from './group';
 import searchReducer from './search';
 import membershipsReducer from './memberships';
+// import usersReducer from './members';
 
 const rootReducer = combineReducers({
-  session, 
+  session: sessionReducer,
+  // user: usersReducer, 
   groups: groupsReducer,
   search: searchReducer,
   memberships: membershipsReducer,

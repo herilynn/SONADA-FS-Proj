@@ -14,7 +14,8 @@ const GroupShow = () => {
   const {groupId} = useParams()
   const selectCurrentUser = (state) => state.session.user;
   const sessionUser = useSelector(selectCurrentUser);
-  const group = useSelector(getGroup(groupId))
+  const group = useSelector(getGroup(groupId));
+  // const owner = useSelector(getUser(group ? group.ownerId : null));
   const isMember = useSelector(getMemberStatus(sessionUser ? sessionUser.id : null, groupId));
 
   // const [isMember, setIsMember] = useState(false);
