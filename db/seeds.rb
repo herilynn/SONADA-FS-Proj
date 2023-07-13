@@ -98,6 +98,23 @@ Group.create!(
   owner_id: 3
 )
 
+Group.create!(
+  name: 'Tennis year round',
+  description: 'Tennis in the sun',
+  location: 'Miami, Fl',
+  latitude: 25.7617,
+  longitude: -80.1918,
+  owner_id: 6
+)
+
+Group.create!(
+  name: 'Home Renovations',
+  description: 'Need people to help me redecorate',
+  location: 'NY, NY',
+  latitude: 40.69763,
+  longitude: -74.14448,
+  owner_id: 4
+)
 # Group.create!(
 #   name: ''
 # )

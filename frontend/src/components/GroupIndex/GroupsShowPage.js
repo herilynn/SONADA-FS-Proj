@@ -98,7 +98,7 @@ const GroupShow = () => {
         </div>
         <div className="organizer">
         <img className="creatorMarker" src="https://www.pngimages.in/uploads/png-webp/2023/2023-January/Profile_Icon.webp"></img>
-          {`${group.email}`}
+          User #{`${group.ownerId}`}
         </div>
         <div className="members">
         <img className="memberMarker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Noun_Project_people_icon_3376085.svg/1024px-Noun_Project_people_icon_3376085.svg.png"></img>
