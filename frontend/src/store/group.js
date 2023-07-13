@@ -3,8 +3,8 @@ import csrfFetch from "./csrf";
 export const RECEIVE_GROUPS = "groups/RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "groups/RECEIVE_GROUP";
 export const REMOVE_GROUP = "groups/REMOVE_GROUP";
-export const JOIN_GROUP = "groups/JOIN_GROUP";
-export const LEAVE_GROUP = "groups/LEAVE_GROUP";
+// export const JOIN_GROUP = "groups/JOIN_GROUP";
+// export const LEAVE_GROUP = "groups/LEAVE_GROUP";
 
 
 const receiveGroups = (groups) => ({
@@ -22,33 +22,33 @@ const removeGroup = (groupId) => ({
   groupId,
 });
 
-const joinGroupAction = (groupId) => ({
-  type: JOIN_GROUP,
-  groupId,
-});
+// const joinGroupAction = (groupId) => ({
+//   type: JOIN_GROUP,
+//   groupId,
+// });
 
-const leaveGroupAction = (groupId) => ({
-  type: LEAVE_GROUP,
-  groupId,
-});
+// const leaveGroupAction = (groupId) => ({
+//   type: LEAVE_GROUP,
+//   groupId,
+// });
 
-export const joinGroup = (groupId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/groups/${groupId}/join`, {
-    method: "POST",
-  });
-  if (res.ok) {
-    dispatch(joinGroupAction(groupId));
-  }
-};
+// export const joinGroup = (groupId) => async (dispatch) => {
+//   const res = await csrfFetch(`/api/groups/${groupId}/join`, {
+//     method: "POST",
+//   });
+//   if (res.ok) {
+//     dispatch(joinGroupAction(groupId));
+//   }
+// };
 
-export const leaveGroup = (groupId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/groups/${groupId}/leave`, {
-    method: "POST",
-  });
-  if (res.ok) {
-    dispatch(leaveGroupAction(groupId));
-  }
-};
+// export const leaveGroup = (groupId) => async (dispatch) => {
+//   const res = await csrfFetch(`/api/groups/${groupId}/leave`, {
+//     method: "POST",
+//   });
+//   if (res.ok) {
+//     dispatch(leaveGroupAction(groupId));
+//   }
+// };
 
 // export const getGroup = (groupId) => (state) => {
 //   debugger
@@ -90,7 +90,7 @@ export const createGroup = (group) => async (dispatch) => {
   // debugger
   const res = await csrfFetch("/api/groups", {
     method: "POST",
-    body: JSON.stringify({ group: group }),
+    body: JSON.stringify({ group }),
   });
   // debugger
   if (res.ok) {
@@ -122,24 +122,24 @@ const groupsReducer = (oldState = {}, action) => {
   switch (action.type) {
     default:
       return oldState;
-    case JOIN_GROUP:
-      return {
-        ...oldState,
-        [action.groupId]: {
-          ...oldState[action.groupId],
-          members: [...oldState[action.groupId].members, action.userId],
-        },
-      };
-    case LEAVE_GROUP:
-      return {
-        ...oldState,
-        [action.groupId]: {
-          ...oldState[action.groupId],
-          members: oldState[action.groupId].members.filter(
-            (memberId) => memberId !== action.userId
-          ),
-        },
-      };
+    // case JOIN_GROUP:
+    //   return {
+    //     ...oldState,
+    //     [action.groupId]: {
+    //       ...oldState[action.groupId],
+    //       members: [...oldState[action.groupId].members, action.userId],
+    //     },
+    //   };
+    // case LEAVE_GROUP:
+    //   return {
+    //     ...oldState,
+    //     [action.groupId]: {
+    //       ...oldState[action.groupId],
+    //       members: oldState[action.groupId].members.filter(
+    //         (memberId) => memberId !== action.userId
+    //       ),
+    //     },
+    //   };
     case RECEIVE_GROUP:
       // debugger
       return { ...oldState, [action.group.id]: action.group };
