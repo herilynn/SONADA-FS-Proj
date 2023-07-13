@@ -19,7 +19,5 @@ class Membership < ApplicationRecord
   foreign_key: :group_id,
   class_name: :Group
 
-  # def self.find_by_group_member(mId, gId)
-  #   return Membership.where(member_id: mId, group_id: gId).first
-  # end
+
 end

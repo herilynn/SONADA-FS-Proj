@@ -7,16 +7,19 @@ import UpdateGroupFormModal from "../UpdateGroupForm";
 // import { getUser, usersInGroup } from "../../store/members";
 import { setCurrentUser } from "../../store/session";
 import Home from "../Map/map";
+import { getMemberStatus, joinGroup, leaveGroup } from "../../store/memberships";
 
 const GroupShow = () => {
   const dispatch = useDispatch()
   const {groupId} = useParams()
-  const group = useSelector(getGroup(groupId))
-  const [isMember, setIsMember] = useState(false);
-
   const selectCurrentUser = (state) => state.session.user;
-
   const sessionUser = useSelector(selectCurrentUser);
+  const group = useSelector(getGroup(groupId))
+  const isMember = useSelector(getMemberStatus(sessionUser ? sessionUser.id : null, groupId));
+
+  // const [isMember, setIsMember] = useState(false);
+
+
   // const sessionUser = useSelector((state) => state.session.user);
 
   // const sessionUser = useSelector(setCurrentUser)
@@ -26,15 +29,15 @@ const GroupShow = () => {
 
   // const members = useSelector(usersInGroup(groupId))
 
-  useEffect(() => {
-    const storedIsMember = localStorage.getItem("isMember");
-    setIsMember(storedIsMember === "true"); 
-    dispatch(fetchGroup(groupId));
-  }, [dispatch, groupId]);
+  // useEffect(() => {
+  //   const storedIsMember = localStorage.getItem("isMember");
+  //   setIsMember(storedIsMember === "true"); 
+  //   dispatch(fetchGroup(groupId));
+  // }, [dispatch, groupId]);
 
-  useEffect(() => {
-    localStorage.setItem("isMember", isMember);
-  }, [isMember]);
+  // useEffect(() => {
+  //   localStorage.setItem("isMember", isMember);
+  // }, [isMember]);
 
   // useEffect(() => {
   //   dispatch(fetchGroup(groupId))
@@ -46,9 +49,9 @@ const GroupShow = () => {
   // const isOwner = group.ownerId === sessionUser.id;
   const isOwner = sessionUser && group.ownerId === sessionUser.id;
 
-  const toggleMembership = () => {
-    setIsMember((prevState) => !prevState);
-  };
+  // const toggleMembership = () => {
+  //   setIsMember((prevState) => !prevState);
+  // };
 
   // const joinLeaveButtonText = isMember ? "Leave" : "Join";
 
@@ -56,6 +59,17 @@ const GroupShow = () => {
   // console.log('sessionUser.id:', sessionUser.id);
   // console.log('isOwner:', isOwner);
   // const description = group[3]?.description;
+
+  const toggleMembership = (e) => {
+    e.preventDefault();
+
+    if(isMember) {
+        dispatch(leaveGroup(groupId));
+    } else {
+        dispatch(joinGroup(groupId));
+    }
+}
+
   return (
     <div className="groupInfo">
       <div className="groupInfoLeft">

@@ -10,8 +10,9 @@ Rails.application.routes.draw do
       collection do
         post 'search'
       end
+      resources :memberships, only: [:create]
     end
-    resources :memberships, only: [:create, :destroy]
+    resources :memberships, only: [:destroy]
   end
   get '*path', to: "static_pages#frontend_index"
 end

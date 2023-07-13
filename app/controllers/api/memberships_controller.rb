@@ -8,7 +8,7 @@ class Api::MembershipsController < ApplicationController
         if (@isMember.save)
             render :show
         else
-            render json {errors: @isMember.errors.full_messages}, status: 422 
+            render json: {errors: @isMember.errors.full_messages}, status: 422 
         end
     end
 
@@ -17,7 +17,8 @@ class Api::MembershipsController < ApplicationController
         if (@isMember.destroy)
             render :show
         else
-            render json {errors @isMember.errors.full_messages}, status: 422
+            render json: {errors: @isMember.errors.full_messages}, status: 422
         end
     end
 end
+
